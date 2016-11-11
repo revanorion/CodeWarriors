@@ -1,0 +1,365 @@
+/*Residency Custom css*/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: #eef1f6;
+/*    background-image: url('../Images/bg.png');*/
+    /*font-family:  Helvetica, sans-serif, Arial ;*/
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px;
+    height: 100%;
+    /* Margin bottom by footer height */
+    margin-bottom: 80px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1.5em 0;
+    padding: 0;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+
+.text-bold {
+    font-weight: bold;
+}
+
+/*.editor-label > label:after {
+    content: ": "
+}
+
+.control-label ~ label:after {
+    content: ": "
+}*/
+
+.hide-border {
+    border: 0 solid;
+    box-shadow: none;
+    background-color: transparent !important;
+    color: brown;
+}
+
+.page-margin {
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+/* spinner */
+.spinner {
+    width: 65px;
+}
+
+    .spinner input {
+        text-align: right;
+    }
+
+.input-group-btn-vertical {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.input-group-btn-vertical > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
+}
+
+    .input-group-btn-vertical > .btn:first-child {
+        border-top-right-radius: 4px;
+    }
+
+    .input-group-btn-vertical > .btn:last-child {
+        margin-top: -2px;
+        border-bottom-right-radius: 4px;
+    }
+
+.input-group-btn-vertical i {
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+a.disabled-link,
+a.disabled-link:visited,
+a.disabled-link:active,
+a.disabled-link:hover {
+    color: #aaa !important;
+    cursor: default !important;
+}
+
+    a.disabled-link > i {
+        color: #aaa !important;
+    }
+
+/*Text Area*/
+textarea {
+    resize: none; /*Not allow rize text araa*/
+}
+
+.panel-heading a {
+    color: white !important;
+    font-size: .8em;
+}
+
+
+/*.front {
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+-ms-backface-visibility: hidden;
+-o-backface-visibility: hidden;
+backface-visibility: hidden;
+}*/
+
+/*.back {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}*/
+
+
+/*#card .back{
+  border-top:2px solid #ed2d39;
+  background-color:  transparent;
+  width:inherit;
+  overflow: hidden;
+  color:green;
+}*/
+/*.front{
+     -webkit-backface-visibility: hidden !important;
+    -moz-backface-visibility: hidden !important;
+    -ms-backface-visibility: hidden !important;
+    -o-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+}*/
+
+/*Flip Card*/
+#card {
+    height: 830px;
+}
+
+/*.card {
+    width: 100px;
+    height: 800px;
+    margin: 20px;
+    display: inline-block;
+}*/
+
+.front, .back {
+    border: 0 white;
+    /*padding: 10px;*/
+}
+
+.front {
+    background-color: white;
+}
+
+.back {
+    background-color: white;
+}
+
+#card .back > div {
+    backface-visibility: inherit;
+}
+
+table tr[href="*"] {
+    cursor: pointer;
+}
+
+/*Telerik*/
+.t-header, .t-grid-header {
+    border-color: #4a70ae;
+    background: #8bc1e8 url('Web20/sprite.png') repeat-x 0 -852px;
+}
+
+    .t-header .t-link {
+        text-align: center;
+    }
+
+.t-grid {
+    font-size: 13px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+    .t-grid tr td {
+        overflow: visible;
+    }
+
+.t-grid-header .t-header .t-link {
+    margin: 0;
+    padding: 0;
+}
+
+.t-grouping-header, .t-grid-toolbar {
+    /*padding: 0 5px;*/
+    height: auto;
+    line-height: normal;
+}
+
+.t-filter-options select {
+    width: 130px;
+}
+
+/*.t-grid-header .t-header .t-link {
+ line-height: normal;
+ height:  auto;
+}*/
+
+.t-upload-button {
+    width: auto;
+}
+
+/* jquery autocomplete*/
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+/* IE 6 doesn't support max-height
+	 * we use height instead, but this forces the menu to always be this tall
+	 */
+* html .ui-autocomplete {
+    height: 300px;
+}
+
+.footer-text {
+    vertical-align: middle;
+    /*font-size: 9pt;*/
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 80px;
+    /*background-color: #f5f5f5;*/
+    font-weight: bold;
+}
+
+/* Login page */
+
+#Login {
+    margin-top: 20px;
+}
+
+.login-form {
+    border: none;
+    height: 280px; /*35rem*/
+    margin: 0;
+}
+
+    .login-form iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.ct-heading {
+    background-color: #3498db !important; /* #5D95CF - light blue, 0B69AB - dark blue, 42627C - darker blue*/
+    color: #FFF !important;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    font-size: x-large;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+/*Modal Dialog*/
+.modal-style-dialog {
+    width: 60%;
+}
+
+
+/* #5D95CF - light blue, 0B69AB - dark blue, 42627C - darker blue*/
+.modal-style-header {
+
+    background-color: #3498db !important;
+    color: #ffffff !important;
+    font-weight: bold;
+    padding:10px;
+}
+.modal-style-header>button,h3
+{
+     display:inline;
+}
+
+
+.modal-style-content {
+    float: left;
+    width: 100%;
+    background: #C8DFF6; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #8BC1E8, #fffbfb); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #8BC1E8, #fffbfb); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right,#8BC1E8, #fffbfb); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #8BC1E8, #fffbfb); /* Standard syntax */
+}
+
+.singleTextBox {
+    width: 12em;
+}
+
+/*button groups for codetables*/
+.pull-right .btn {
+    margin-right: 10px;
+}
+.align-left {
+    text-align:left !important;
+}
+
+input.Small, select.Small, textarea.Small
+{
+    width: 50px;
+}
+
+input.Medium, select.Medium, textarea.Medium
+{
+    width: 110px;
+}
+
+input.Large, select.Large, textarea.Large
+{
+    width: 150px;
+}
+
+input.Standard, select.Standard, textarea.Standard
+{
+    width: 200px;
+}
+
+input.XLarge, select.XLarge, textarea.XLarge
+{
+    width: 250px;
+}
+
+.control-label
+{
+    font-weight: 700;
+}
+

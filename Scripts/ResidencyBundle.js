@@ -1,0 +1,21 @@
+!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",[
+    'bootstrap.min.js',
+    'toastr.js',
+    'jquery-{version}.js',
+    'jquery.maskedinput.js',
+    'DataTables/jquery.dataTables.min.js',
+    'DataTables/dataTables.bootstrap.min.js',
+    'jquery.validate.min.js',
+    'jquery.validate.unobtrusive.min.js',
+    'select2.full.min.js',
+    'toastr.min.js',
+    'jquery-ui-{version}.js',
+    'jquery.validate*',
+    'moment.min.js',
+    'bootstrap.min.js',
+    'bootstrap-switch.js',
+    'bootstrap-dialog.js',
+    'respond.min.js',
+    'bootstrap-datetimepicker.min.js',
+    'moment-with-locales.min.js'
+])

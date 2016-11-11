@@ -1,0 +1,528 @@
+/*Residency Custom Boostrap*/
+/*.navbar-default .navbar-nav>.active>a:before,
+.navbar-nav>li>a:before {
+    background-repeat: no-repeat;
+    background-position: 0 top;
+    content: "";
+    display: inline-block;
+    height: 29px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 29px;
+}*/
+
+/*.navbar-default .navbar-nav > .active > a.home:before,
+.navbar-nav > li > a.home:before {
+    background-image: url('../Images/pbc_logo.png');
+}*/
+
+/*.navbar-default .navbar-nav>.active>a.about:before,
+.navbar-nav>li>a.about:before {  background-image: url('../Images/pbc_logo.png'); }*/
+
+.container {
+    width: 100%;
+}
+
+
+/*.row {
+ margin: 0 30px 0 30px;
+}*/
+
+.page-header {
+    margin: 80px 0 20px !important;
+    font-weight: bold;
+}
+
+
+/*This is the header for the other pages version (RequestForService2)*/
+.page-header2 {
+    margin-top: 20px  !important;
+    font-weight: bold;
+}
+
+.dropdown-toggle {
+    color:#FFF !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.grid-title {
+    font-size:18px !important;
+}
+
+form {
+    margin: 0 40px 0 40px;
+}
+/*Variant #1*/
+.nav-background-color {
+    background-color: #ffffff !important; /* #042E4C, 1034A6, 00008B, 191970 - midnight blue  #191970*/
+}
+
+#navBarHeader {
+    background-color: #fff;
+    padding: 0 30px 0 10px;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+#menuDiv {
+    /*position: absolute;*/
+    /*margin-top: 60px;*/
+    background-color: #0B69AB;   /* #3498db - light blue from other FDO app */
+    /*border:double 2px red;*/
+}
+
+.dropdown {
+    color: white;
+}
+/*Bootstrap Panels*/
+.panel-heading {
+    background-color: #3498db !important; /* #5D95CF - light blue, 0B69AB - dark blue, 42627C - darker blue*/
+    color: #ffffff !important;
+    font-weight: bold;
+    padding:8px;
+}
+
+.panel-body {
+    background: #F3F9FF; /* E2EDFF - super light blue, E2EDFF  */
+}
+
+.panel-body-background {
+    background: #C8DFF6; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #8BC1E8, #fffbfb); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #8BC1E8, #fffbfb); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right,#8BC1E8, #fffbfb); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #8BC1E8, #fffbfb); /* Standard syntax */
+    /*background-color: #C8DFF6 !important;*/
+    /*#E5FEFF*/
+}
+
+
+/*.btn-action {
+    color: #fff;
+    background-color: #ff3030;
+    border-color: #46b8da;
+}*/
+
+/*End of Panels*/
+
+/*Modify icon addon position */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon>.glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/*div .control-label {
+    text-align:left !important;
+}*/
+
+/* align icon */
+.left-addon>.glyphicon {
+    left: 0;
+}
+
+.right-addon>.glyphicon {
+    right: 0;
+}
+
+/* add padding  */
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+/*End Modify position icon*/
+
+.gly-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+.gly-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.gly-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.gly-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.gly-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.gly-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+/*Tables*/
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #f5f2f2;
+}
+
+.table TH {
+    text-align: center;
+    background-color: #6e9fc3;
+    color: #FFF;
+    vertical-align: middle !important;
+}
+
+.dataTable > thead > tr > th[class*="sort"]:after{
+    content: "" !important;
+}
+
+/*table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+    background : none;
+}*/
+
+/*.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: normal;
+    line-height: 1;
+    color: #000;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}*/
+
+.fixed-panel {
+    min-height: 680px;
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+/*.data-label, .data-text {
+    padding: 4px;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 0 !important;
+}*/
+
+/*Modal Dialog*/
+/*.modal-dialog {
+  position:absolute;
+  top:50% !important;
+  transform: translate(0, -50%) !important;
+  -ms-transform: translate(0, -50%) !important;
+  -webkit-transform: translate(0, -50%) !important;
+  margin:auto 5%;
+  width:90%;
+  height:80%;
+}
+.modal-content {
+  min-height:100%;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.modal-body {
+  position:absolute;
+  top:45px; // height of header
+  bottom:45px;  // height of footer
+  left:0;
+  right:0;
+  overflow-y:auto;
+}
+.modal-footer {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+}*/
+
+/*.toast-top-center {
+    top: 12px;
+    margin: 0 auto;
+    left: 50%;
+    margin-left: -150px;
+}*/
+
+/*Modal Dialog center of screen */
+/*http://codepen.io/dimbslmh/full/mKfCc*/
+.modal {
+    text-align: center;
+    padding: 0 !important;
+}
+
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+
+.modal-dialog {
+    display: inline-block;
+    margin: 10px !important;
+    text-align: left;
+    vertical-align: middle;
+
+}
+
+.modal-dialog.modal-lg {
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content  {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.modal-body {
+   padding: 20px;
+}
+
+.modal-header-color {
+    background-color:#eb6f12
+}
+
+
+.pagination {
+    margin-top: 0 !important;
+}
+
+.paginate_button {
+    padding: 0 !important;
+}
+
+
+/*menu side bar*/
+.navbar-default .active { background:blue }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #000; /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #C8DFF6; /*BACKGROUND color for active*/
+    background-color: #030033;
+}
+
+.navbar-default {
+    background-color: #0f006f;
+    border-color: #030033;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #66CCFF; /*change color of links in drop down here*/
+}
+
+.nav > li > a:hover,
+.nav > li > a:active,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: #8BC1E8 !important; /*change rollover cell color here*/
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white; /*Change active text color here*/
+}
+
+.sidebar-brand > li > a {
+    color: white;
+}
+
+/*Remove space in controls*/
+/*.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}*/
+
+/*div > div[class*="col-"] {
+       padding-left: 2px;
+      }*/
+
+/*.form-horizontal .control-group {
+    margin-bottom: 8px;
+}*/
+
+/*Remove space between rows*/
+form .form-group {
+    margin-bottom: 8px;
+}
+
+form .panel {
+    margin-bottom: 14px;
+}
+/*End Remove space between rows*/
+
+.btn-group>.btn+.dropdown-toggle {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.btn-xs, .btn-group-xs>.btn {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+/*To display an asterisk on the right of the label*/
+/*.form-group.required .control-label:after {
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 2px;
+    top:7px;
+    font-family: 'Glyphicons Halflings';
+    font-weight: normal;
+    font-size: 14px;
+}*/
+
+.required-field:after {
+    color: red;
+    content: "*";
+    position: absolute;
+    margin-left: 8px;
+    top:6px;
+    /*font-family: 'Glyphicons Halflings';
+    font-weight: normal;
+    font-size: 10px;*/
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .45s linear;
+    transition: opacity .45s linear;
+}
+
+/*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width: 993px) and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width: 769px) and (max-width : 992px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width: 481px) and (max-width : 768px) {
+        .body-content {
+            margin-top: 70px;
+        }
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width: 321px) and (max-width: 480px) {
+         /*.toast-top-center {
+        margin-left: -96px;
+    } */
+    }
+
+    /* Custom, iPhone Retina */
+    @media only screen and (max-width: 320px) {
+        /*.toast-top-center {
+        margin-left: -64px;
+    } */
+    }
+
+/*==========  End Non-Mobile First Method  ==========*/
+
+
+/*#menu-toggle {
+    width: 30px;
+    text-align: center;
+    float:left;
+      font-size: 20px;
+    background-color: #3498db;
+    position: fixed;
+    color: white;
+}*/
+
+
+
+/*Only for Design propouse*/
+/*div {
+    border: 1px solid gray !important;
+}
+div .control-label {
+    border: 1px solid #b00c39 !important;
+}
+div[class*="col-md-"] {
+ border: 1px solid #4493CA !important;
+}*/
