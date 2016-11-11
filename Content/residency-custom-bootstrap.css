@@ -1,32 +1,22 @@
 /*Residency Custom Boostrap*/
-/*.navbar-default .navbar-nav>.active>a:before,
-.navbar-nav>li>a:before {
-    background-repeat: no-repeat;
-    background-position: 0 top;
-    content: "";
-    display: inline-block;
-    height: 29px;
-    margin-right: 10px;
-    vertical-align: middle;
-    width: 29px;
-}*/
+/*
+FAU Blue
+Web Safe: 003366
 
-/*.navbar-default .navbar-nav > .active > a.home:before,
-.navbar-nav > li > a.home:before {
-    background-image: url('../Images/pbc_logo.png');
-}*/
+FAU Silver
+PANTONE 877
 
-/*.navbar-default .navbar-nav>.active>a.about:before,
-.navbar-nav>li>a.about:before {  background-image: url('../Images/pbc_logo.png'); }*/
+FAU Gray
+Web Safe: CCCCCC
+
+FAU Red
+Web Safe: CC0000
+*/
+
 
 .container {
     width: 100%;
 }
-
-
-/*.row {
- margin: 0 30px 0 30px;
-}*/
 
 .page-header {
     margin: 80px 0 20px !important;
@@ -65,10 +55,7 @@ form {
 }
 
 #menuDiv {
-    /*position: absolute;*/
-    /*margin-top: 60px;*/
-    background-color: #0B69AB;   /* #3498db - light blue from other FDO app */
-    /*border:double 2px red;*/
+    background-color: #003366;
 }
 
 .dropdown {
@@ -76,14 +63,14 @@ form {
 }
 /*Bootstrap Panels*/
 .panel-heading {
-    background-color: #3498db !important; /* #5D95CF - light blue, 0B69AB - dark blue, 42627C - darker blue*/
+    background-color: #3498db !important;
     color: #ffffff !important;
     font-weight: bold;
     padding:8px;
 }
 
 .panel-body {
-    background: #F3F9FF; /* E2EDFF - super light blue, E2EDFF  */
+    background: #F3F9FF;
 }
 
 .panel-body-background {
@@ -92,16 +79,9 @@ form {
     background: -o-linear-gradient(bottom right, #8BC1E8, #fffbfb); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(bottom right,#8BC1E8, #fffbfb); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom right, #8BC1E8, #fffbfb); /* Standard syntax */
-    /*background-color: #C8DFF6 !important;*/
-    /*#E5FEFF*/
+
 }
 
-
-/*.btn-action {
-    color: #fff;
-    background-color: #ff3030;
-    border-color: #46b8da;
-}*/
 
 /*End of Panels*/
 
@@ -116,10 +96,6 @@ form {
     padding: 10px;
     pointer-events: none;
 }
-
-/*div .control-label {
-    text-align:left !important;
-}*/
 
 /* align icon */
 .left-addon>.glyphicon {
@@ -237,79 +213,11 @@ form {
     content: "" !important;
 }
 
-/*table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc {
-    background : none;
-}*/
-
-/*.label {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 75%;
-    font-weight: normal;
-    line-height: 1;
-    color: #000;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
-}*/
-
 .fixed-panel {
     min-height: 680px;
     max-height: 700px;
     overflow-y: scroll;
 }
-
-/*.data-label, .data-text {
-    padding: 4px;
-    font-family: Verdana,Geneva,sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    padding-bottom: 0 !important;
-}*/
-
-/*Modal Dialog*/
-/*.modal-dialog {
-  position:absolute;
-  top:50% !important;
-  transform: translate(0, -50%) !important;
-  -ms-transform: translate(0, -50%) !important;
-  -webkit-transform: translate(0, -50%) !important;
-  margin:auto 5%;
-  width:90%;
-  height:80%;
-}
-.modal-content {
-  min-height:100%;
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-}
-.modal-body {
-  position:absolute;
-  top:45px; // height of header
-  bottom:45px;  // height of footer
-  left:0;
-  right:0;
-  overflow-y:auto;
-}
-.modal-footer {
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-}*/
-
-/*.toast-top-center {
-    top: 12px;
-    margin: 0 auto;
-    left: 50%;
-    margin-left: -150px;
-}*/
 
 /*Modal Dialog center of screen */
 /*http://codepen.io/dimbslmh/full/mKfCc*/
@@ -403,20 +311,6 @@ table.dataTable thead .sorting_desc {
     color: white;
 }
 
-/*Remove space in controls*/
-/*.no-padding {
-   padding: 0 !important;
-   margin: 0 !important;
-}*/
-
-/*div > div[class*="col-"] {
-       padding-left: 2px;
-      }*/
-
-/*.form-horizontal .control-group {
-    margin-bottom: 8px;
-}*/
-
 /*Remove space between rows*/
 form .form-group {
     margin-bottom: 8px;
@@ -440,17 +334,6 @@ form .panel {
 }
 
 /*To display an asterisk on the right of the label*/
-/*.form-group.required .control-label:after {
-    color: #d00;
-    content: "*";
-    position: absolute;
-    margin-left: 2px;
-    top:7px;
-    font-family: 'Glyphicons Halflings';
-    font-weight: normal;
-    font-size: 14px;
-}*/
-
 .required-field:after {
     color: red;
     content: "*";
@@ -502,27 +385,3 @@ form .panel {
     }
 
 /*==========  End Non-Mobile First Method  ==========*/
-
-
-/*#menu-toggle {
-    width: 30px;
-    text-align: center;
-    float:left;
-      font-size: 20px;
-    background-color: #3498db;
-    position: fixed;
-    color: white;
-}*/
-
-
-
-/*Only for Design propouse*/
-/*div {
-    border: 1px solid gray !important;
-}
-div .control-label {
-    border: 1px solid #b00c39 !important;
-}
-div[class*="col-md-"] {
- border: 1px solid #4493CA !important;
-}*/

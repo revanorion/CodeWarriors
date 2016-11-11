@@ -1,4 +1,22 @@
 /*Residency Custom css*/
+
+/*
+FAU Blue
+Web Safe: 003366
+
+FAU Silver
+PANTONE 877
+
+FAU Gray
+Web Safe: CCCCCC
+
+FAU Red
+Web Safe: CC0000
+*/
+
+
+
+
 html {
     position: relative;
     min-height: 100%;
@@ -34,14 +52,6 @@ hr {
 .text-bold {
     font-weight: bold;
 }
-
-/*.editor-label > label:after {
-    content: ": "
-}
-
-.control-label ~ label:after {
-    content: ": "
-}*/
 
 .hide-border {
     border: 0 solid;
@@ -121,48 +131,6 @@ textarea {
     font-size: .8em;
 }
 
-
-/*.front {
--webkit-backface-visibility: hidden;
--moz-backface-visibility: hidden;
--ms-backface-visibility: hidden;
--o-backface-visibility: hidden;
-backface-visibility: hidden;
-}*/
-
-/*.back {
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}*/
-
-
-/*#card .back{
-  border-top:2px solid #ed2d39;
-  background-color:  transparent;
-  width:inherit;
-  overflow: hidden;
-  color:green;
-}*/
-/*.front{
-     -webkit-backface-visibility: hidden !important;
-    -moz-backface-visibility: hidden !important;
-    -ms-backface-visibility: hidden !important;
-    -o-backface-visibility: hidden !important;
-    backface-visibility: hidden !important;
-}*/
-
-/*Flip Card*/
-#card {
-    height: 830px;
-}
-
-/*.card {
-    width: 100px;
-    height: 800px;
-    margin: 20px;
-    display: inline-block;
-}*/
-
 .front, .back {
     border: 0 white;
     /*padding: 10px;*/
@@ -217,11 +185,6 @@ table tr[href="*"] {
 .t-filter-options select {
     width: 130px;
 }
-
-/*.t-grid-header .t-header .t-link {
- line-height: normal;
- height:  auto;
-}*/
 
 .t-upload-button {
     width: auto;
@@ -279,7 +242,7 @@ footer {
 }
 
 .ct-heading {
-    background-color: #3498db !important; /* #5D95CF - light blue, 0B69AB - dark blue, 42627C - darker blue*/
+    background-color: #3498db !important;
     color: #FFF !important;
     font-weight: bold;
     padding: 8px;
