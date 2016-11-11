@@ -4,7 +4,7 @@ FAU Blue
 Web Safe: 003366
 
 FAU Silver
-PANTONE 877
+Web Safe: 8a8d8f
 
 FAU Gray
 Web Safe: CCCCCC
@@ -63,24 +63,14 @@ form {
 }
 /*Bootstrap Panels*/
 .panel-heading {
-    background-color: #3498db !important;
+    background-color: #8a8d8f !important;
     color: #ffffff !important;
     font-weight: bold;
     padding:8px;
+    font-size: 20px;
 }
 
-.panel-body {
-    background: #F3F9FF;
-}
 
-.panel-body-background {
-    background: #C8DFF6; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left top, #8BC1E8, #fffbfb); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #8BC1E8, #fffbfb); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right,#8BC1E8, #fffbfb); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom right, #8BC1E8, #fffbfb); /* Standard syntax */
-
-}
 
 
 /*End of Panels*/
