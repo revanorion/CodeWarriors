@@ -17,5 +17,6 @@
     'bootstrap-dialog.js',
     'respond.min.js',
     'bootstrap-datetimepicker.min.js',
-    'moment-with-locales.min.js'
+    'moment-with-locales.min.js',
+    'residency.js'
 ])
