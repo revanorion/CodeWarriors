@@ -326,3 +326,19 @@ input.XLarge, select.XLarge, textarea.XLarge
     font-weight: 700;
 }
 
+@media screen and (max-width:767px) {
+    .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+}@media only screen and (max-width:480px) {
+    #fau-header.pull-left  {
+    float:  none !important;
+    margin:  0 auto;
+}
+#sub-fau-header  {
+    margin:  0 auto;
+}
+
