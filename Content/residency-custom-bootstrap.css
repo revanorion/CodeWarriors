@@ -72,6 +72,21 @@ form {
 
 /*End of Panels*/
 
+/*Start of Student dashboard*/
+#studentNewBtn{
+    background: #036;
+    color: white;
+    box-shadow: 4px 3px 4px #888888
+}
+#studentEditBtn{
+    background: #C00;
+    color: white;
+    box-shadow: 4px 3px 4px #888888
+}
+/*End of Student dashboard*/
+
+
+
 /* For Header and Navbar DONT CHANGE */
 /* Navigation */
 .navbar-custom {
@@ -129,6 +144,8 @@ header {
     margin:  0 auto;
 }
 /* End of Header & Navbar */
+
+
 
 /*Modify icon addon position */
 .inner-addon {
