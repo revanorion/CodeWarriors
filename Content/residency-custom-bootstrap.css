@@ -74,11 +74,13 @@ form {
 
 /*Start of Student dashboard*/
 #studentNewBtn{
+    height: 60px;
     background: #036;
     color: white;
     box-shadow: 4px 3px 4px #888888
 }
 #studentEditBtn{
+    height: 60px;
     background: #C00;
     color: white;
     box-shadow: 4px 3px 4px #888888
