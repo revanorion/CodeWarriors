@@ -68,7 +68,7 @@
             },
             submitHandler : function(form){
                 $.ajax({
-                url: 'process.php',
+                url: './process.php',
                 type: 'POST',
                 data: $(form).serialize(),
                 dataType: 'json',
