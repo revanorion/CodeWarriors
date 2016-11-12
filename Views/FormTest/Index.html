@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>Getting Started</title>
+    <link rel="stylesheet" type="text/css" href="../../Content/ResidencyBundle.css">
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+ <!--   <script src="validation.js"></script> -->
+</head>
+
+<body>
+    <div id="menuDiv"> <img src="../../Content/Images/fau-logo.png" /> </div>
+    <div class="container-fluid body-content">
+
+        <div class="col-sm-6 col-sm-offset-3">
+
+            <h1>Processing an AJAX Form</h1>
+
+            <!-- OUR FORM -->
+            <form id= "formtest" action="process.php" method="POST">
+
+                <!-- NAME -->
+                <div id="name" class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="John Snow">
+                    <!-- errors will go here -->
+                </div>
+
+                <!-- EMAIL -->
+                <div id="email" class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu">
+                    <!-- errors will go here -->
+                </div>
+
+                <!-- SUPERHERO ALIAS -->
+                <div id="pnumber" class="form-group">
+                    <label for="phonenumber">Phone number</label>
+                    <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890">
+                    <!-- errors will go here -->
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+<script>
+    $(function() {
+        $("#formtest").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: "required",
+                pnumber: "required"
+            },
+            messages: {
+                email:{
+                    required: "Please enter an email address.",
+                    email: "Please enter a <em>valid</em> email address"
+                }
+            },
+            submitHandler : function(form){
+                $.ajax({
+                url: 'process.php',
+                type: 'POST',
+                data: $(form).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    alert('Response: ' + response);
+                }            
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+<script src="../../Scripts/bootstrap.js"></script>
+
+</html>
