@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../../Content/ResidencyBundle.css">
     <script src="../../Scripts/jquery-2.2.3.min.js" type="text/javascript"></script>
     <script src="../../Scripts/ResidencyBundle.js"></script>
-        <script src="http://malsup.github.com/jquery.form.js"></script> 
-</head>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Content/residency-custom-bootstrap.css"> </head>
 
 <body>
     <!-- BEGINNING Leave this in every page -->
@@ -45,38 +45,69 @@
     </nav>
     <!-- END Leave this in every Page -->
     <div class="container-fluid body-content">
-    <h1>Processing an AJAX Form</h1>
-
-                <!-- OUR FORM -->
-        <form id= "formtest" action="process.php" method="POST">
-
+        <h1>Processing an AJAX Form</h1>
+        <!-- OUR FORM -->
+        <form id="formtest" action="process.php" method="POST">
             <!-- NAME -->
             <div id="name" class="form-group">
                 <label for="name">First Name</label>
                 <input type="text" class="form-control" name="name" placeholder="John Snow">
                 <!-- errors will go here -->
             </div>
-
             <!-- EMAIL -->
             <div id="email" class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu">
+                <label class="control-label col-md-2 required-field" for="email">Email: </label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu"> </div>
                 <!-- errors will go here -->
             </div>
-
             <!-- SUPERHERO ALIAS -->
             <div id="pnumber" class="form-group">
-                <label for="phonenumber">Phone number</label>
-                <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890">
+                <label class="control-label col-md-2" for="phonenumber">Phone number</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890"></div>
                 <!-- errors will go here -->
             </div>
-
             <button type="submit" class="btn btn-success">Submit</button>
-
         </form>
+<<<<<<< HEAD
+    </div>
+    <script>
+        $(function () {
+            $("#formtest").validate({
+                rules: {
+                    email: {
+                        required: true
+                        , email: true
+                    }
+                    , password: "required"
+                    , pnumber: "required"
+                }
+                , messages: {
+                    email: {
+                        required: "Please enter an email address."
+                        , email: "Please enter a <em>valid</em> email address"
+                    }
+                }
+                , submitHandler: function (form) {
+                    $.ajax({
+                        url: './process.php'
+                        , type: 'POST'
+                        , data: $(form).serialize()
+                        , dataType: 'json'
+                        , success: function (response) {
+                            alert('Response: ' + response);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+=======
 </div>
 <!-- Include out validation.js script -->
 <script src="validation.js"></script>
+>>>>>>> origin/master
 </body>
 
 </html>

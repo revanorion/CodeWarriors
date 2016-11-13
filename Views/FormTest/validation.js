@@ -24,7 +24,7 @@ $(function() {
             dataType: 'json',
             success: function(response) {
                 alert('Response: ' + response);
-            }            
+            }
             });
         }
     });

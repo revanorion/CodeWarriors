@@ -14,9 +14,6 @@ FAU Red
 Web Safe: CC0000
 */
 
-
-
-
 html {
     position: relative;
     min-height: 100%;
@@ -323,7 +320,8 @@ input.XLarge, select.XLarge, textarea.XLarge
 
 .control-label
 {
-    font-weight: 700;
+    font-weight: 700px;
+
 }
 
 @media screen and (max-width:767px) {
