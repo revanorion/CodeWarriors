@@ -15,10 +15,10 @@ $(function() {
                 email: "Please enter a <em>valid</em> email address"
             }
         },
-        //submitHandler is envoked when validate passes
+        //submitHandler is invoked when validate passes
         submitHandler : function(form){
             $.ajax({
-            url: './process.php',
+            url: 'process.php',
             type: 'POST',
             data: $(form).serialize(),
             dataType: 'json',
