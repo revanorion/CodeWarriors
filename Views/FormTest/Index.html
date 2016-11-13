@@ -1,87 +1,112 @@
-<html>
-<head>
-    <title>Getting Started</title>
-    <link rel="stylesheet" type="text/css" href="../../Content/ResidencyBundle.css">
-<!--    <script  src="https://code.jquery.com/jquery-2.2.4.js"  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>-->
-    <script src="../../Scripts/jquery-2.2.3.min.js"></script>
-<!--    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>-->
-    <script src="../../Scripts/ResidencyBundle.js"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
-<!--    <script src="validation.js"></script> -->
+<!DOCTYPE html>
+<!-- <html xml:lang="en-US" lang="en-US"> -->
 
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TITLE GOES HERE</title>
+    <link rel="stylesheet" type="text/css" href="../../Content/ResidencyBundle.css">
+    <script src="../../Scripts/jquery-2.2.3.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/ResidencyBundle.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script> 
 </head>
 
 <body>
-    <div id="menuDiv"> <img src="../../Content/Images/fau-logo.png" /> </div>
-    <div class="container-fluid body-content">
-
-        <div class="col-sm-6 col-sm-offset-3">
-
-            <h1>Processing an AJAX Form</h1>
-
-            <!-- OUR FORM -->
-            <form id= "formtest" action="process.php" method="POST">
-
-                <!-- NAME -->
-                <div id="name" class="form-group">
-                    <label for="name">First Name</label>
-                    <input type="text" class="form-control" name="name" placeholder="John Snow">
-                    <!-- errors will go here -->
+    <!-- BEGINNING Leave this in every page -->
+    <header class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">
+                    <a href="/" class="header-logo" title="Florida Atlantic University"> <img id="fau-header" class="img-responsive pull-left" src="../../Content/Images/fau-home-logo.png" /> </a>
                 </div>
-
-                <!-- EMAIL -->
-                <div id="email" class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu">
-                    <!-- errors will go here -->
-                </div>
-
-                <!-- SUPERHERO ALIAS -->
-                <div id="pnumber" class="form-group">
-                    <label for="phonenumber">Phone number</label>
-                    <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890">
-                    <!-- errors will go here -->
-                </div>
-
-                <button type="submit" class="btn btn-success">Submit</button>
-
-            </form>
+            </div>
         </div>
-    </div>
+    </header>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default  navbar-custom">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> Menu<i></i> </button> <a class="navbar-brand" id="navtext" href="#page-top">FAU</a> </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#home"></a>
+                    </li>
+                    <li class="page-scroll"> <a href="#">Home</a> </li>
+                    <li class="page-scroll"> <a href="#">Application</a> </li>
+                    <li class="page-scroll"> <a href="#">Login</a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- END Leave this in every Page -->
+    <div class="container-fluid body-content">
+    <h1>Processing an AJAX Form</h1>
 
-<script>
-    $(function() {
-        $("#formtest").validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
+                <!-- OUR FORM -->
+        <form id= "formtest" action="process.php" method="POST">
+
+            <!-- NAME -->
+            <div id="name" class="form-group">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" name="name" placeholder="John Snow">
+                <!-- errors will go here -->
+            </div>
+
+            <!-- EMAIL -->
+            <div id="email" class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu">
+                <!-- errors will go here -->
+            </div>
+
+            <!-- SUPERHERO ALIAS -->
+            <div id="pnumber" class="form-group">
+                <label for="phonenumber">Phone number</label>
+                <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890">
+                <!-- errors will go here -->
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+
+        </form>
+</div>
+
+    <script>
+        $(function() {
+            $("#formtest").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: "required",
+                    pnumber: "required"
                 },
-                password: "required",
-                pnumber: "required"
-            },
-            messages: {
-                email:{
-                    required: "Please enter an email address.",
-                    email: "Please enter a <em>valid</em> email address"
+                messages: {
+                    email:{
+                        required: "Please enter an email address.",
+                        email: "Please enter a <em>valid</em> email address"
+                    }
+                },
+                submitHandler : function(form){
+                    $.ajax({
+                    url: './process.php',
+                    type: 'POST',
+                    data: $(form).serialize(),
+                    dataType: 'json',
+                    success: function(response) {
+                        alert('Response: ' + response);
+                    }            
+                    });
                 }
-            },
-            submitHandler : function(form){
-                $.ajax({
-                url: './process.php',
-                type: 'POST',
-                data: $(form).serialize(),
-                dataType: 'json',
-                success: function(response) {
-                    alert('Response: ' + response);
-                }            
-                });
-            }
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
-<!--<script src="../../Scripts/bootstrap.js"></script>-->
 
 </html>
