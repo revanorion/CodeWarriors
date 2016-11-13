@@ -65,49 +65,14 @@
             <div id="pnumber" class="form-group">
                 <label class="control-label col-md-2" for="phonenumber">Phone number</label>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890"></div>
+                    <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890"> </div>
                 <!-- errors will go here -->
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
-<<<<<<< HEAD
     </div>
-    <script>
-        $(function () {
-            $("#formtest").validate({
-                rules: {
-                    email: {
-                        required: true
-                        , email: true
-                    }
-                    , password: "required"
-                    , pnumber: "required"
-                }
-                , messages: {
-                    email: {
-                        required: "Please enter an email address."
-                        , email: "Please enter a <em>valid</em> email address"
-                    }
-                }
-                , submitHandler: function (form) {
-                    $.ajax({
-                        url: './process.php'
-                        , type: 'POST'
-                        , data: $(form).serialize()
-                        , dataType: 'json'
-                        , success: function (response) {
-                            alert('Response: ' + response);
-                        }
-                    });
-                }
-            });
-        });
-    </script>
-=======
-</div>
-<!-- Include out validation.js script -->
-<script src="validation.js"></script>
->>>>>>> origin/master
+    <!-- Include out validation.js script -->
+    <script src="validation.js"></script>
 </body>
 
 </html>
