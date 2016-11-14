@@ -49,26 +49,32 @@
         <!-- OUR FORM -->
         <form id="formtest" action="process.php" method="POST">
             <!-- NAME -->
-            <div id="name" class="form-group">
-                <label for="name">First Name</label>
-                <input type="text" class="form-control" name="name" placeholder="John Snow">
+            <div id="name" class="row form-group">
+                <label class="control-label col-md-2" for="name">First Name: </label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="name" placeholder="John Snow"> </div>
                 <!-- errors will go here -->
             </div>
             <!-- EMAIL -->
-            <div id="email" class="form-group">
+            <div id="email" class="row form-group">
                 <label class="control-label col-md-2 required-field" for="email">Email: </label>
                 <div class="col-md-3">
                     <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu"> </div>
                 <!-- errors will go here -->
             </div>
             <!-- SUPERHERO ALIAS -->
-            <div id="pnumber" class="form-group">
-                <label class="control-label col-md-2" for="phonenumber">Phone number</label>
+            <div id="pnumber" class="row form-group">
+                <label class="control-label col-md-2" for="phonenumber">Phone number: </label>
                 <div class="col-md-3">
                     <input type="text" class="form-control" name="phonenumber" placeholder="123-456-7890"> </div>
                 <!-- errors will go here -->
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <div class="col-md-5 form-group">
+                <div class="btn-group pull-right" role="group">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
         </form>
     </div>
     <!-- Include out validation.js script -->

@@ -229,9 +229,8 @@ footer {
     /* Set the fixed height of the footer here */
     /*background-color: #f5f5f5;*/
     overflow: hidden;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
     border-top: 30px solid #e2e2e2;
 }
 
@@ -316,10 +315,6 @@ h3 {
 
 /*button groups for codetables*/
 
-.pull-right .btn {
-    margin-right: 10px;
-}
-
 .align-left {
     text-align: left !important;
 }
@@ -355,8 +350,16 @@ textarea.XLarge {
 }
 
 .control-label {
-    font-weight: 700px;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: right;
+    padding-top: 5px;
 }
+
+.error {
+    color: red;
+}
+
 
 @media screen and (max-width:767px) {
     .row-offcanvas {
