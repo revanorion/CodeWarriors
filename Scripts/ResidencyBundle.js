@@ -4,8 +4,6 @@
     '../../Scripts/jquery.maskedinput.js',
     '../../Scripts/DataTables/jquery.dataTables.min.js',
     '../../Scripts/DataTables/dataTables.bootstrap.min.js',
-    '../../Scripts/jquery.validate.min.js',
-    '../../Scripts/jquery.validate.unobtrusive.min.js',
     '../../Scripts/select2.full.min.js',
     '../../Scripts/toastr.min.js',
     '../../Scripts/jquery-ui-1.11.4.min.js',
