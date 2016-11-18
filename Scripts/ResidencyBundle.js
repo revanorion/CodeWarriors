@@ -6,7 +6,6 @@
     '../../Scripts/DataTables/dataTables.bootstrap.min.js',
     '../../Scripts/select2.full.min.js',
     '../../Scripts/toastr.min.js',
-    'https://code.jquery.com/ui/1.12.1/jquery-ui.js',
     '../../Scripts/jquery.validate.min.js',
     '../../Scripts/jquery.validate.unobtrusive.min.js',
     '../../Scripts/moment.min.js',
@@ -14,6 +13,10 @@
     '../../Scripts/bootstrap-dialog.js',
     '../../Scripts/respond.min.js',
     '../../Scripts/bootstrap-datetimepicker.min.js',
-    '../../Scripts/moment-with-locales.min.js'
+    '../../Scripts/moment-with-locales.min.js',
     '../../Scripts/jquery.steps.min.js'
 ])
+// !!! READ BELOW !!!
+// Be careful on certain import via CDN, some require the integrity and crossorigin attributes
+// for SRI checking or they may not work properly.
+// If this is the case then you must import from within the template page
