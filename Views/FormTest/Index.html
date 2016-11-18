@@ -11,12 +11,10 @@
     <script src="../../Scripts/ResidencyBundle.js"></script>
     <!-- The import below does not seem to work 100% unless you include
         the integrity and crossorigin tag -->
-    <script
-  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <link rel="stylesheet" type="text/css" href="../../Content/residency-custom-bootstrap.css"> </head>
+
 <body>
     <!-- BEGINNING Leave this in every page -->
     <header class="banner">
@@ -57,15 +55,18 @@
             <div id="name" class="row form-group">
                 <label class="control-label col-md-2" for="name">First Name: </label>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="name" placeholder="John Snow"> </div>
-                <!-- errors will go here -->
-            </div>
+                        <input type="text" class="form-control" name="name" placeholder="John Snow"> </div>
+                    <!-- errors will go here -->
+                </div>
             <!-- EMAIL -->
             <div id="email" class="row form-group">
                 <label class="control-label col-md-2 required-field" for="email">Email: </label>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu"> </div>
-                <!-- errors will go here -->
+                    <div class="input-group"> <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-envelope"></span> </span>
+                        <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu"> </div>
+                    <!-- errors will go here -->
+                </div>
             </div>
             <!-- Phone Number -->
             <div id="pnumber" class="row form-group">
