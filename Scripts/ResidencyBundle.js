@@ -6,7 +6,7 @@
     '../../Scripts/DataTables/dataTables.bootstrap.min.js',
     '../../Scripts/select2.full.min.js',
     '../../Scripts/toastr.min.js',
-    '../../Scripts/jquery-ui-1.11.4.min.js',
+    'https://code.jquery.com/ui/1.12.1/jquery-ui.js',
     '../../Scripts/jquery.validate.min.js',
     '../../Scripts/jquery.validate.unobtrusive.min.js',
     '../../Scripts/moment.min.js',
@@ -15,4 +15,5 @@
     '../../Scripts/respond.min.js',
     '../../Scripts/bootstrap-datetimepicker.min.js',
     '../../Scripts/moment-with-locales.min.js'
+    '../../Scripts/jquery.steps.min.js'
 ])

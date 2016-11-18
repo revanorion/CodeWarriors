@@ -11,5 +11,8 @@
 @import '../../Content/select2.min.css';
 @import '../../Content/select2-bootstrap.css';
 @import '../../Content/themes.css';
+
+@import url('//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
+
 @import '../../Content/residency.css';
 @import '../../Content/residency-custom-bootstrap.css';
