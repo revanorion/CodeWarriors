@@ -59,27 +59,7 @@
         border-top: none;
         }
     </style>
-    <script>
-        function openForm(evt, formName) {
-            var i, tabcontent, tablinks;
 
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the link that opened the tab
-            document.getElementById(formName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
 </head>
 
 <body>
@@ -129,7 +109,7 @@
                 <a href="javascript:void(0)" class="tablinks" onclick="openForm(event, 'Provisions')">Provisions</a>
             </li>
             <li>
-                <a href="javascript:void(0)" class="tablinks" onclick="openForm(event, 'Questions 1')">Questions 1</a>
+                <a href="javascript:void(0)" class="tablinks" onclick="openForm(event, 'Questions_1')">Questions 1</a>
             </li>
             <li>
                 <a href="javascript:void(0)" class="tablinks" onclick="openForm(event, 'Dependency')">Dependency</a>
@@ -138,7 +118,7 @@
                 <a href="javascript:void(0)" class="tablinks" onclick="openForm(event,'Exception')">Exception</a>
             </li>
             <li>
-                <a href="javascript:void(0)" class="tablinks" onclick="openForm(event,'Questions 2')">Questions 2</a>
+                <a href="javascript:void(0)" class="tablinks" onclick="openForm(event,'Questions_2')">Questions 2</a>
             </li>
             <li>
                 <a href="javascript:void(0)" class="tablinks" onclick="openForm(event,'Submission')">Submission</a>
@@ -155,10 +135,9 @@
                     <p>This is the beginning of the forms for the student applicants. This web application interface was designed to make it more convenient to fill out the residency apllication and help with checking the status of the application. Please begin by stating if you are a Florida Resident or a Non-Florida Resident.</p>
                 </div>
 
-                <form action="">
-                    <input type="radio" name="" value=""> Florida Resident<br>
-                    <input type="radio" name="" value=""> Non-Florida Resident<br>
-                </form>
+                <input type="radio" name="" value=""> Florida Resident<br>
+                <input type="radio" name="" value=""> Non-Florida Resident<br>
+
             </form>
         </div>
 
@@ -181,6 +160,8 @@
         </div>
         <div id="Question 1" class="tabcontent">
             <form id="Question 1" action="process.php" method="POST">
+        <div id="Questions_1" class="tabcontent">
+            <form id="Questions_1" action="process.php" method="POST">
                 <div class="row form-group">
                     <label class="control-label col-md-2 required-field" for="firstname">First Name: </label>
                     <div class="col-md-2">
@@ -218,7 +199,6 @@
                         <input type="text" class="form-control" name="year" placeholder="2016">
                     </div>
                 </div>
-
                 <div class="row form-group">
                     <label class="control-label col-md-2 required-field" for="dob">Date of Birth: </label>
                     <div class="col-md-1">
@@ -244,18 +224,17 @@
                     </p>
                 </div>
                 <div>
-                    <form action="">
-                        <input type="checkbox" name="" value=""> I am a dependent student, as defined by s. 1009.21(1)(a), Florida Statutes, in that I am eligible to be claimed as a dependent under the federal income tax code by the claimant below. The claimant is my "parent" as defined by s. 1009.21(1)(f), Florida Statutes, (i.e., either or both parents of the student, any guardian of a student, or any person in a parental relationship to the student).  My parent has maintained legal residence in Florida for at least the past 12 consecutive months.  As defined by section 1009.21(1)(d), Florida Statutes, "'legal resident' or 'resident' means a person who has maintained his or her residence in this state for the preceding year, has purchased a home which is occupied by him or her as his or her residence, or has established a domicile in this state pursuant to s. 222.17." A copy of your parent's tax return may be requested to establish dependence. <br>
-                        <input type="checkbox" name="" value=""> I am an independent person who has maintained legal residence in Florida for at least the past 12 consecutive months.  I provide more than 50% of my own support. An independent student generally includes a person who is at least 24 years old, married, a graduate or professional student, a veteran, a member of the armed forces, a ward of the court, or someone with legal dependents other than a spouse, pursuant to the United States Department of Education for the purposes of federal financial aid eligibility.  There may be limited cases where a person under the age of 24 years old may qualify as an independent student.  Such students will be required to verify independence (including financial independence.) A copy of your tax return may be requested to establish independence.<br>
-                        <input type="checkbox" name="" value=""> I meet residency requirements through one of the Qualifications by Exception below (check appropriate exception): <br>
 
-                        <div>
-                            <label>TERM OF APPLICATION: (check one): </label>
-                            <input type="checkbox" name="" value="">FALL<br>
-                            <input type="checkbox" name="" value="">SPRING<br>
-                            <input type="checkbox" name="" value="">SUMMER<br>
+                    <input type="checkbox" name="" value=""> I am a dependent student, as defined by s. 1009.21(1)(a), Florida Statutes, in that I am eligible to be claimed as a dependent under the federal income tax code by the claimant below. The claimant is my "parent" as defined by s. 1009.21(1)(f), Florida Statutes, (i.e., either or both parents of the student, any guardian of a student, or any person in a parental relationship to the student).  My parent has maintained legal residence in Florida for at least the past 12 consecutive months.  As defined by section 1009.21(1)(d), Florida Statutes, "'legal resident' or 'resident' means a person who has maintained his or her residence in this state for the preceding year, has purchased a home which is occupied by him or her as his or her residence, or has established a domicile in this state pursuant to s. 222.17." A copy of your parent's tax return may be requested to establish dependence. <br>
+                    <input type="checkbox" name="" value=""> I am an independent person who has maintained legal residence in Florida for at least the past 12 consecutive months.  I provide more than 50% of my own support. An independent student generally includes a person who is at least 24 years old, married, a graduate or professional student, a veteran, a member of the armed forces, a ward of the court, or someone with legal dependents other than a spouse, pursuant to the United States Department of Education for the purposes of federal financial aid eligibility.  There may be limited cases where a person under the age of 24 years old may qualify as an independent student.  Such students will be required to verify independence (including financial independence.) A copy of your tax return may be requested to establish independence.<br>
+                    <input type="checkbox" name="" value=""> I meet residency requirements through one of the Qualifications by Exception below (check appropriate exception): <br>
+
+                    <div>
+                        <label>TERM OF APPLICATION: (check one): </label>
+                        <input type="checkbox" name="" value="">FALL<br>
+                        <input type="checkbox" name="" value="">SPRING<br>
+                        <input type="checkbox" name="" value="">SUMMER<br>
                         </div>
-                    </form>
                 </div>
             </form>
         </div>
@@ -285,12 +264,12 @@
                 </div>
             </form>
         </div>
-        <div id="Question 2" class="tabcontent">
-        <form id="Questions 2" action="process.php" method="POST">
+        <div id="Questions_2" class="tabcontent">
+        <form id="Questions_2" action="process.php" method="POST">
             <div>
                 <strong>
                     <em>TO BE COMPLETED BY THE CLAIMANT / PERSON CLAIMING FLORIDA RESIDENCY</em>
-                </strong
+                </strong>
             </div>
             <div>
                 <p>Note:  If the student is a dependent, the parent is the claimant and will complete this section and provide evidence of residency supporting the claim.  If the student is independent, the student is the claimant and will complete this section and provide evidence of residency supporting the claim. <strong>No single document shall be conclusive in establishing residency.  Additional documentation, other than what is prescribed, may be requested in some cases.  All documentation provided is subject to verification.  Evidence of ties to another state may result in denial of Florida residency for tuition purposes.</strong></p>
@@ -384,11 +363,13 @@
             </form>
         </div>
 
-         <div class="col-md-13 form-group">
+
+        <!--BUTTONS-->
+        <div class="col-md-12 form-group">
                 <div class="btn-group pull-right" role="group">
-                    <button type="button" class="btn btn-default">Submit</button>
-                    <button type="button" class="btn btn-success">Next</button>
-                    <button type="button" class="btn btn-default">Cancel</button>
+                    <button id="submit_btn" style="display:none;" type="button" class="btn btn-default">Submit</button>
+                    <button id="next_btn" style="display:block" type="button" class="btn btn-default">Next</button>
+                    <button id="cancel_btn" style="display:block" type="button" class="btn btn-default">Cancel</button>
                 </div>
         </div>
     </div>
@@ -403,6 +384,36 @@
             </div>
         </div>
     </footer>
+
+     <script>
+        function openForm(evt, formName) {
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.querySelectorAll(".tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.querySelectorAll(".tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(formName).style.display = "block";
+            evt.currentTarget.className += " active";
+            if(formName == "Submission") {
+                document.querySelector('#submit_btn').style.display = "block";
+                document.querySelector('#next_btn').style.display = "none";
+            } else {
+                document.querySelector('#submit_btn').style.display = "none";
+            }
+        }
+         openForm('click', 'Initial');
+    </script>
+
 </body>
 
 </html>
