@@ -1,3 +1,4 @@
+<!--<?php session_start(); ob_start(); $message1="" ; if(isset($_GET[ "session_expired"])) { //If session is expired this is shown $message1="Login Session is Expired. Please Login Again" ; } if(isset($_GET[ "permission_denied"])) { //If user is not allowed access or does not have a session this is shown $message1="You do not have permission to view that page! please sign up or log in" ; } if(isset($_GET[ "loggedout"])) { //If user is not allowed access or does not have a session this is shown $message1="You logged out of your account" ; } if(isset($_GET[ "wrongpass"])) { //If user is not allowed access or does not have a session this is shown $message1="You entered a wrong username or password" ; } if(isset($_GET[ "login_success"])) { //If user is not allowed access or does not have a session this is shown $message1="Login Successful" ; } ?>-->
 <!DOCTYPE html>
 
 <head>
@@ -53,18 +54,24 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 text-center"> Please enter your FAU Z-number (excluding the Z) to login and get started on your application</div>
         </div>
-        <form>
+        <form action="login.php" method="post">
             <div class="row">
                 </br>
                 </br>
                 <div class="col-md-4"></div>
-                    <div class="form-group col-md-4">
-                        <label for="Z-number">Z-number:</label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon1">Z</span>
-                            <input class="form-control" id="znumber" type="number" placeholder="Enter Z-number" aria-describedby="basic-addon1"> 
-                        </div>
-                    </div>
+                <div class="form-group col-md-4">
+                    <label for="Z-number">Z-number:</label>
+                    <div class="input-group"> <span class="input-group-addon" id="basic-addon1">Z</span>
+                        <input class="form-control" name="znumber" id="znumber" type="number" placeholder="Enter Z-number" aria-describedby="basic-addon1"> </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="form-group col-md-4">
+                    <label for="Z-number">Password:</label>
+                    <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input class="form-control" name="password" id="pasword" type="text" placeholder="Enter Password" aria-describedby="basic-addon1"> </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-4"></div>
