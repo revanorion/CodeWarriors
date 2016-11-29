@@ -1,4 +1,4 @@
-@import '../../Content/bootstrap.min.css';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 @import '../../Content/font-awesome.min.css';
 @import '../../Content/bootstrap-dialog.css';
 @import '../../Content/bootstrap-switch/bootstrap3/bootstrap-switch.min.css';
