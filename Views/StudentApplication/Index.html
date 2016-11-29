@@ -58,6 +58,15 @@
         border: 1px solid #ccc;
         border-top: none;
         }
+
+        form{
+
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: - 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
     </style>
 
 </head>
@@ -96,10 +105,11 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
     <!-- END Leave this in every Page -->
     <div class="container-fluid body-content">
         <!-- OUR FORM -->
-        <h3 style="font-family = sans-seriuf">RESIDENCY FORM</h3>
+        <h3 style="font-family = sans-seriuf"><strong>RESIDENCY FORM</strong></h3>
 
         <ul class="innerTab">
             <li>
@@ -140,7 +150,6 @@
 
             </form>
         </div>
-
         <div id="Provisions" class="tabcontent">
             <form id="Provisions" action="process.php" method="POST">
 
@@ -158,8 +167,6 @@
                 </div>
             </form>
         </div>
-        <div id="Question 1" class="tabcontent">
-            <form id="Question 1" action="process.php" method="POST">
         <div id="Questions_1" class="tabcontent">
             <form id="Questions_1" action="process.php" method="POST">
                 <div class="row form-group">
@@ -186,7 +193,7 @@
                 </div>
                 <div class="row form-group">
                     <label class="control-label col-md-2 required-field" for="term">Term of Application: </label>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <select class="form-control" name="term">
                             <option selected>Select One</option>
                             <option value="Fall">Fall</option>
@@ -194,7 +201,7 @@
                             <option value="Summer">Summer</option>
                         </select>
                     </div>
-                    <label class="control-label col-md-2 required-field" for="year">Year: </label>
+                    <label class="control-label col-md-3 required-field" for="year">Year: </label>
                     <div class="col-md-2">
                         <input type="text" class="form-control" name="year" placeholder="2016">
                     </div>
@@ -229,12 +236,14 @@
                     <input type="checkbox" name="" value=""> I am an independent person who has maintained legal residence in Florida for at least the past 12 consecutive months.  I provide more than 50% of my own support. An independent student generally includes a person who is at least 24 years old, married, a graduate or professional student, a veteran, a member of the armed forces, a ward of the court, or someone with legal dependents other than a spouse, pursuant to the United States Department of Education for the purposes of federal financial aid eligibility.  There may be limited cases where a person under the age of 24 years old may qualify as an independent student.  Such students will be required to verify independence (including financial independence.) A copy of your tax return may be requested to establish independence.<br>
                     <input type="checkbox" name="" value=""> I meet residency requirements through one of the Qualifications by Exception below (check appropriate exception): <br>
 
-                    <div>
-                        <label>TERM OF APPLICATION: (check one): </label>
-                        <input type="checkbox" name="" value="">FALL<br>
-                        <input type="checkbox" name="" value="">SPRING<br>
-                        <input type="checkbox" name="" value="">SUMMER<br>
+                    <div style="margin-top:20px">
+                        <label class="required-field">TERM OF APPLICATION: (check one):</label>
+                        <div>
+                            <input type="checkbox" name="" value="">FALL<br>
+                            <input type="checkbox" name="" value="">SPRING<br>
+                            <input type="checkbox" name="" value="">SUMMER<br>
                         </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -273,26 +282,32 @@
             </div>
             <div>
                 <p>Note:  If the student is a dependent, the parent is the claimant and will complete this section and provide evidence of residency supporting the claim.  If the student is independent, the student is the claimant and will complete this section and provide evidence of residency supporting the claim. <strong>No single document shall be conclusive in establishing residency.  Additional documentation, other than what is prescribed, may be requested in some cases.  All documentation provided is subject to verification.  Evidence of ties to another state may result in denial of Florida residency for tuition purposes.</strong></p>
-                <div style="align:left">
-                    <label class="control-label col-md-2 required-field" for="claimantname">Claimant/Name of Person claiming FL Residency: </label>
-                    <div class="col-md-2">
-                        <input type="text" class="form-control" name="claimantName" placeholder="Jon">
-                    </div>
-                    <label class="control-label col-md-1" for="relationship">Claimant Relationship to Student: </label>
-                    <div class="col-md-2">
+                <div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                        <label class="control-label required-field" for="claimantname">Claimant/Name of Person claiming FL Residency:</label>
+                            <input type="text" class="form-control" name="claimantName" placeholder="Jon">
+
+                        </div>
+                        <div class="col-md-6">
+                        <label class="control-label" for="relationship">Claimant Relationship to Student:   </label>
                         <input type="text" class="form-control" name="relationship" placeholder="Self">
+                        </div>
                     </div>
-                    <label class="control-label col-md-1 required-field" for="claimantAdress">Claimant's adress: </label>
-                    <div class="col-md-2">
-                        <input type="text" class="form-control" name="claimantAddress" placeholder="">
+                    <div>
+                        <label class="control-label required-field" for="claimantAdress">Claimant's adress:</label>
+                        <input style="margin-bottom:5px" type="text" class="form-control" name="claimantAddress" placeholder="1345 Yellow Brick rd.">
                     </div>
-                    <label class="control-label col-md-1" for="claimantTelephone">Telephone Number: </label>
-                    <div class="col-md-2">
-                        <input type="text" class="form-control" name="claimantTelephone" placeholder="">
-                    </div>
-                    <label class="control-label col-md-1" for="DateOfResidency">Date Claimant began establishing legal Fl residence (if upon birth enter birthdate): </label>
-                    <div class="col-md-2">
-                        <input type="text" class="form-control" name="DateOfResidency" placeholder="">
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label class="control-label" for="claimantTelephone">Telephone Number: </label>
+                            <input type="text" class="form-control" name="claimantTelephone" placeholder="">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label" for="DateOfResidency">Date Claimant began establishing legal Fl residence (if upon birth enter birthdate): </label>
+                            <input type="text" class="form-control" name="DateOfResidency" placeholder="">
+                        </div>
+
                     </div>
                 </div>
                 <div>
@@ -332,40 +347,42 @@
         </form>
         </div>
         <div id="Submission" class="tabcontent">
-        <form id="Submission" action="process.php" method="POST">
-            <h4><strong>RESIDENCY DECLARATION:</strong></h4>
-            <div>
-                <p>I, the undersigned, hereby declare that I have read the foregoing document and that the facts stated in it are true and further affirm the authenticity of the information provided on all pages of this Residency Declaration. I understand that any false or misleading information on this Residency Declaration, or provided in support of this Residency Declaration, will subject me to penalties pursuant to section 837.06, Florida Statutes, for making a false statement.  I give permission for the institution to review or examine any and all documents and records, including those accessible electronically, which may assist in support of my claim as a Florida resident for tuition purposes.</p>
-            </div>
-            <div>
-                <label class="control-label col-md-2 required-field" for="studentName">Student Name (Please Print): </label>
-                <div class="col-md-2">
-                    <input type="text" class="form-control" name="studentName" placeholder="Jon">
+            <form id="Submission" action="process.php" method="POST">
+                <h4><strong>RESIDENCY DECLARATION:</strong></h4>
+                <div>
+                    <p>I, the undersigned, hereby declare that I have read the foregoing document and that the facts stated in it are true and further affirm the authenticity of the information provided on all pages of this Residency Declaration. I understand that any false or misleading information on this Residency Declaration, or provided in support of this Residency Declaration, will subject me to penalties pursuant to section 837.06, Florida Statutes, for making a false statement.  I give permission for the institution to review or examine any and all documents and records, including those accessible electronically, which may assist in support of my claim as a Florida resident for tuition purposes.</p>
                 </div>
-                <label class="control-label col-md-1" for="claimantName">Claimant Name (if not the Student): </label>
-                <div class="col-md-2">
-                    <input type="text" class="form-control" name="relationship" placeholder="Jon">
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label class="control-label required-field" for="studentName">Student Name (Please Print):</label>
+                        <input type="text" class="form-control" name="studentName" placeholder="Jon">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" for="claimantName">Claimant Name (if not the Student): </label>
+                        <input type="text" class="form-control" name="relationship" placeholder="Jon">
+                    </div>
                 </div>
-                <label class="control-label col-md-1" for="signature">Signature: </label>
-                <div class="col-md-2">
-                    <input type="text" class="form-control" name="signature" placeholder="Jon">
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label class="control-label required-field" for="signature">Signature:</label>
+                        <input type="text" class="form-control" name="signature" placeholder="Jon">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label" for="Date">Date</label>
+                        <input type="text" class="form-control" name="Date" placeholder="Jon">
+                    </div>
                 </div>
-                <label class="control-label col-md-1" for="Date">Date </label>
-                <div class="col-md-2">
-                    <input type="text" class="form-control" name="Date" placeholder="Jon">
-                </div>
-            </div>
-        </form>
+            </form>
         </div>
         <div id="Confirmation" class="tabcontent">
             <form id="Confirmation" action="process.php" method="POST">
-
+                <p>Thank you, Jon Snow for taking your time to complete this form application. A confirmation has been sent to your email..... </p>
             </form>
         </div>
 
 
         <!--BUTTONS-->
-        <div class="col-md-12 form-group">
+        <div id = "button_area" class="col-md-12 form-group">
                 <div class="btn-group pull-right" role="group">
                     <button id="submit_btn" style="display:none;" type="button" class="btn btn-default">Submit</button>
                     <button id="next_btn" style="display:block" type="button" class="btn btn-default">Next</button>
@@ -404,11 +421,18 @@
             // Show the current tab, and add an "active" class to the link that opened the tab
             document.getElementById(formName).style.display = "block";
             evt.currentTarget.className += " active";
+
             if(formName == "Submission") {
                 document.querySelector('#submit_btn').style.display = "block";
                 document.querySelector('#next_btn').style.display = "none";
-            } else {
+            } else if(formName == "Confirmation"){
                 document.querySelector('#submit_btn').style.display = "none";
+                document.querySelector('#cancel_btn').style.display = "none";
+                document.querySelector('#next_btn').style.display = "none";
+            } else{
+                document.querySelector('#submit_btn').style.display = "none";
+                document.querySelector('#cancel_btn').style.display = "block";
+                document.querySelector('#next_btn').style.display = "block";
             }
         }
          openForm('click', 'Initial');
