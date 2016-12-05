@@ -1,0 +1,83 @@
+<?php
+// 	require_once "db_connect.php"; //connects to the data base
+session_start();
+
+function is_ajax() {
+  return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+}
+
+//This checks which ajax post is called.
+if (is_ajax()) {
+    if(isset($_POST['signup']) && !empty($_POST['znumber']) && !empty($_POST['password'])) {
+        echo registerUser($_POST['znumber'], $_POST['password']);
+    }
+    if(isset($_POST['login']) && !empty($_POST['znumber']) && !empty($_POST['password'])) {
+        echo loginUser($_POST['znumber'], $_POST['password']);
+    }
+}
+
+function registerUser($znumber, $password){
+    require_once './db_connect.php';
+    $selectStmt = "SELECT USER_SEQ FROM user WHERE Z_NUMBER ='".$znumber."'";
+    $result = $db->query($selectStmt);
+    if (mysqli_num_rows($result) > 0) {
+        return -1;
+    }
+    else
+    {
+        $insertStmt= "INSERT INTO user (Z_NUMBER, PASSWORD) VALUES ('".$znumber."', '".password_hash($password, PASSWORD_DEFAULT)."')";
+        $result = $db->query($insertStmt);
+        if (mysqli_affected_rows($db) > -1) {
+            return 1;
+        }
+        return 0;
+    }
+}
+
+
+function loginUser($znumber, $password){
+    require_once './db_connect.php';
+    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM user WHERE Z_NUMBER ='".$znumber."'";
+    $result = $db->query($selectStmt);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        if(password_verify($password, $row["PASSWORD"])){
+            //this will store the session vars
+            $_SESSION["login_user"] = $znumber;
+            $_SESSION["login_user_id"] = $row["USER_SEQ"];
+            $_SESSION["image_posts"] = null;
+            echo "your in".$_SESSION["login_user"];
+        }
+        else{
+            echo "try again";
+        }
+    }
+    else
+    {
+        echo "User doesnt exist";
+    }
+}
+
+//if(isset($_SESSION["user_name"])) { //Checks if the user was sent back for session expiration
+	/* WHAT TO DO IF THE SESSION IS SET
+	if(!isLoginSessionExpired()) { //if it is not expired it goes to the wall php file
+	header('Location:form.php');
+	*/
+//	header('Location:index.php?login_success=1');
+//	}
+
+	/* IF WE WANT SESSION TO BE TIMED
+	function isLoginSessionExpired() { //Session creator
+	$login_session_duration = 300;  //duration of session
+	$current_time = time(); //gets the current time
+	if(isset($_SESSION['loggedin_time']) and isset($_SESSION["user_name"])){  //If the time is ok and the user is connected
+		if(((time() - $_SESSION['loggedin_time']) > $login_session_duration)){  //lets the user stay in
+			return true;
+		}
+	}
+	return false;
+	}
+	*/
+
+
+?>

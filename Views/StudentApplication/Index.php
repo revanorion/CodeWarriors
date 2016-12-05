@@ -1,6 +1,12 @@
-<!--<?php session_start(); ob_start(); if(!isset($_SESSION["user_name"])){header("Location:logout.php?permission_denied");} ?>-->
+<?php
+session_start();
+ // Includes Login Script
+if(!isset($_SESSION['login_user'])){
+    header("location: ../Portal/index.php");
+}
+
+?>
 <!DOCTYPE html>
-<!-- <html xml:lang="en-US" lang="en-US"> -->
 
 <head>
     <meta charset="utf-8" />
@@ -197,7 +203,7 @@
             <h4><strong>TO BE COMPLETED BY THE CLAIMANT / PERSON CLAIMING FLORIDA RESIDENCY</strong></h4>
             <section>
                 <p>Note: If the student is a dependent, the parent is the claimant and will complete this section and provide evidence of residency supporting the claim. If the student is independent, the student is the claimant and will complete this section and provide evidence of residency supporting the claim. <strong>No single document shall be conclusive in establishing residency.  Additional documentation, other than what is prescribed, may be requested in some cases.  All documentation provided is subject to verification.  Evidence of ties to another state may result in denial of Florida residency for tuition purposes.</strong></p>
-                <div style="align:left">
+<!--                <div style="align:left">-->
                     <label class="control-label col-md-2 required-field" for="claimantname">Claimant/Name of Person claiming FL Residency: </label>
                     <div class="col-md-2">
                         <input type="text" class="form-control" name="claimantName" placeholder="Jon"> </div>
@@ -213,7 +219,9 @@
                     <label class="control-label col-md-1" for="DateOfResidency">Date Claimant began establishing legal Fl residence (if upon birth enter birthdate): </label>
                     <div class="col-md-2">
                         <input type="text" class="form-control" name="DateOfResidency" placeholder=""> </div>
-                </div> <strong>PROVISION OF DOCUMENTS TO SUPPORT CLAIM OF FLORIDA RESIDENCY:</strong>
+<!--                </div> -->
+
+                <strong>PROVISION OF DOCUMENTS TO SUPPORT CLAIM OF FLORIDA RESIDENCY:</strong>
                 <p> <strong>Per s. 1009.21(3)(c), Florida Statutes, the residency determination must be documented by the submission of written or electronic verification that includes two or more of the documents identified below.  No single piece of evidence shall be conclusive.</strong> </p> <strong>A.  Claimant must provide at least one of the following of his/her personal documentation:</strong>
                 <input type="checkbox" name="" value="">
                 <br>

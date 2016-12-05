@@ -1,6 +1,12 @@
-<!--<?php session_start(); ob_start(); $message1="" ; if(isset($_GET[ "session_expired"])) { //If session is expired this is shown $message1="Login Session is Expired. Please Login Again" ; } if(isset($_GET[ "permission_denied"])) { //If user is not allowed access or does not have a session this is shown $message1="You do not have permission to view that page! please sign up or log in" ; } if(isset($_GET[ "loggedout"])) { //If user is not allowed access or does not have a session this is shown $message1="You logged out of your account" ; } if(isset($_GET[ "wrongpass"])) { //If user is not allowed access or does not have a session this is shown $message1="You entered a wrong username or password" ; } if(isset($_GET[ "login_success"])) { //If user is not allowed access or does not have a session this is shown $message1="Login Successful" ; } ?>-->
-<!DOCTYPE html>
+<?php
+session_start();
+ // Includes Login Script
+if(isset($_SESSION['login_user'])){
+    header("location: ../Home/index.php");
+}
 
+?>
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
@@ -54,7 +60,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 text-center"> Please enter your FAU Z-number (excluding the Z) to login and get started on your application</div>
         </div>
-        <form action="login.php" method="post">
+        <form id="loginForm" class="form-group" action="../../Controllers/portal.php">
             <div class="row">
                 </br>
                 </br>
@@ -70,17 +76,21 @@
                 <div class="form-group col-md-4">
                     <label for="Z-number">Password:</label>
                     <div class="input-group"> <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        <input class="form-control" name="password" id="pasword" type="text" placeholder="Enter Password" aria-describedby="basic-addon1"> </div>
+                        <input class="form-control" name="password" id="password" type="password" placeholder="Enter Password" aria-describedby="basic-addon1"> </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4"></div>
-                <div class="form-group col-md-4">
-                    <button type="submit" class="btn btn-primary btn-lg" onclick="alert('Button Has been Pressed')">Login</button>
+                <div class="col-md-4 col-md-offset-4">
+                <div class="btn-group ">
+                    <button id="login" type="button" class="btn btn-success btn-lg">Login</button>
+                    <button id="sign-up" type="button" class="btn btn-primary btn-lg">Sign Up</button>
+                </div>
                 </div>
             </div>
         </form>
     </div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="portal.js" type="text/javascript"></script>
 </body>
 
 </html>

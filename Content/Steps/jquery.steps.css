@@ -73,7 +73,7 @@
 
 .wizard > .steps > ul > li
 {
-    width: 25%;
+/*    width: 25%;*/
 }
 
 .wizard > .steps > ul > li,
@@ -142,8 +142,8 @@
     background: #eee;
     display: block;
     margin: 0.5em;
-    min-height: 35em;
-    overflow: hidden;
+    min-height: 25em;
+    overflow: auto;
     position: relative;
     width: auto;
 
