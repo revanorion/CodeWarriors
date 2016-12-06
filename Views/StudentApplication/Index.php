@@ -73,36 +73,44 @@ if(!isset($_SESSION['login_user'])){
                 <section>
 
                     <p>This is the beginning of the forms for the student applicants. This web application interface was designed to make it more convenient to fill out the residency apllication and help with checking the status of the application. Please begin by stating if you are a Florida Resident or a Non-Florida Resident.</p>
+                    <!--                    <form id="radioSelect">-->
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="ResidentRadios" value="" checked> Florida Resident
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="ResidentRadios" value=""> Non-Florida Resident
+                        </label>
+                    </div>
 
-                    <input type="radio" name="" value=""> Florida Resident
-                    <br>
-                    <input type="radio" name="" value=""> Non-Florida Resident
-                    <br>
+                    <!--                    </form>-->
                 </section>
                 <h4><strong>FLORIDA RESIDENCY DECLARATION FOR TUITION PURPOSES</strong></h4>
                 <section>
 
-                        <p>A Florida "resident for tuition purposes" is a person who has, or a dependent person whose parent or legal guardian has, established and maintained legal residency in Florida for at least twelve (12) consecutive months preceding the first day of classes of the term for which Florida residency is sought.</p>
+                    <p>A Florida "resident for tuition purposes" is a person who has, or a dependent person whose parent or legal guardian has, established and maintained legal residency in Florida for at least twelve (12) consecutive months preceding the first day of classes of the term for which Florida residency is sought.</p>
 
 
-                        <div>Wanted to add a border line</div>
-                        <ul>
-                            <li>Residence in Florida must be a bona fide domicile rather than for the purpose of maintaining a residence incident to enrollment at an institution of higher education. </li>
-                            <li>To qualify as a Florida resident for tuition purposes, you must be a U.S. citizen, a foreign national in a nonimmigrant visa classification that grants you the legal ability to establish a bona fide domicile in the United States, a permanent resident alien, parolee, asylee, Cuban-Haitian entrant, legal alien granted indefinite stay, or other qualified alien as defined under federal law. Other persons not meeting the twelve-month legal residence requirements may be classified as Florida residents for tuition purposes only if they fall within one of the limited special categories authorized by the Florida Legislature pursuant to section 1009.21, Florida Statutes (see "Qualification by Exception"). All other persons are ineligible for classification as a Florida "resident for tuition purposes". </li>
-                            <li>Living in or attending school in Florida will not, in itself, establish legal residence. Students who depend upon out-of-state parents for support are presumed to be legal residents of the same state as their parents.</li>
-                            <li>Residency for tuition purposes requires the establishment of legal ties to the state of Florida. A student must verify that the student has broken ties to other states if the student or, in the case of a dependent student, his or her parent has moved from another state. </li>
-                        </ul>
+                    <div>Wanted to add a border line</div>
+                    <ul>
+                        <li>Residence in Florida must be a bona fide domicile rather than for the purpose of maintaining a residence incident to enrollment at an institution of higher education. </li>
+                        <li>To qualify as a Florida resident for tuition purposes, you must be a U.S. citizen, a foreign national in a nonimmigrant visa classification that grants you the legal ability to establish a bona fide domicile in the United States, a permanent resident alien, parolee, asylee, Cuban-Haitian entrant, legal alien granted indefinite stay, or other qualified alien as defined under federal law. Other persons not meeting the twelve-month legal residence requirements may be classified as Florida residents for tuition purposes only if they fall within one of the limited special categories authorized by the Florida Legislature pursuant to section 1009.21, Florida Statutes (see "Qualification by Exception"). All other persons are ineligible for classification as a Florida "resident for tuition purposes". </li>
+                        <li>Living in or attending school in Florida will not, in itself, establish legal residence. Students who depend upon out-of-state parents for support are presumed to be legal residents of the same state as their parents.</li>
+                        <li>Residency for tuition purposes requires the establishment of legal ties to the state of Florida. A student must verify that the student has broken ties to other states if the student or, in the case of a dependent student, his or her parent has moved from another state. </li>
+                    </ul>
 
                     <div class="row form-group">
                         <label class="control-label col-md-2 required-field" for="firstname">First Name: </label>
                         <div class="col-md-2">
-                            <input type="text" class="form-control required" name="firstname" placeholder="Jon"> </div>
+                            <input type="text" class="form-control required" name="firstname"> </div>
                         <label class="control-label col-md-1" for="middlename">Middle Name: </label>
                         <div class="col-md-2">
                             <input type="text" class="form-control" name="middlename" placeholder=""> </div>
                         <label class="control-label col-md-1 required-field" for="lastname">Last Name: </label>
                         <div class="col-md-2">
-                            <input type="text" class="form-control" name="lastname" placeholder="Snow"> </div>
+                            <input type="text" class="form-control required" name="lastname"> </div>
                         <label class="control-label col-md-1" for="suffix">Suffix: </label>
                         <div class="col-md-1">
                             <select class="form-control" name="suffix">
@@ -114,17 +122,17 @@ if(!isset($_SESSION['login_user'])){
                     </div>
                     <div class="row form-group">
                         <label class="control-label col-md-2 required-field" for="term">Term of Application: </label>
-                        <div class="col-md-1">
-                            <select class="form-control" name="term">
-                                <option selected>Select One</option>
+                        <div class="col-md-2">
+                            <select class="form-control" name="TermSelect">
+                                <option value="default" selected>Select One</option>
                                 <option value="Fall">Fall</option>
                                 <option value="Spring">Spring</option>
                                 <option value="Summer">Summer</option>
                             </select>
                         </div>
-                        <label class="control-label col-md-2 required-field" for="year">Year: </label>
+                        <label class="control-label col-md-1 required-field" for="year">Year: </label>
                         <div class="col-md-2">
-                            <input type="text" class="form-control" name="year" placeholder="2016"> </div>
+                            <input type="number" name="quantity" min="4" max="4" class="form-control required" name="year" placeholder="2016"> </div>
                     </div>
                     <div class="row form-group">
                         <label class="control-label col-md-2 required-field" for="dob">Date of Birth: </label>
@@ -287,6 +295,9 @@ if(!isset($_SESSION['login_user'])){
         <script src="../../Scripts/jquery.steps.min.js"></script>
         <script>
             debugger;
+            $.validator.addMethod("valueNotEquals", function(value, element, arg) {
+                return arg != value;
+            }, "Value must not equal arg.");
             var form = $("#studentForm").show();
             form.steps({
                 headerTag: "h4",
@@ -325,7 +336,17 @@ if(!isset($_SESSION['login_user'])){
                 }
             }).validate({
                 errorPlacement: function errorPlacement(error, element) {
-                    element.before(error);
+                    element.after(error);
+                },
+                rules: {
+                    TermSelect: {
+                        valueNotEquals: "default"
+                    }
+                },
+                messages: {
+                    TermSelect: {
+                        valueNotEquals: "Please select an item!"
+                    }
                 }
             });
 
