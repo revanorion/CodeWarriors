@@ -1027,36 +1027,36 @@ function removeStepFromCache(wizard, index)
     refreshStepNavigation(wizard, options, state);
     renderPagination(wizard, options, state);
 }*/
-function render(wizard, options, state) {
-    // Create a content wrapper and copy HTML from the intial wizard structure
-    var contentWrapperTemplate = "<{0} class=\"{1}\"></{0}>",
-        stepsWrapperTemplate = "<{0} class=\"{1}\">{2}</{0}>",
-        orientation = getValidEnumValue(stepsOrientation, options.stepsOrientation),
-        verticalCssClass = (orientation === stepsOrientation.vertical) ? " vertical" : "",
-        contentWrapper = $(contentWrapperTemplate.format(options.contentContainerTag, "content " +     options.clearFixCssClass)),
-        stepsWrapper = $(stepsWrapperTemplate.format(options.stepsContainerTag, "steps " + options.clearFixCssClass, "<ul role=\"tablist\"></ul>"));
+    function render(wizard, options, state) {
+        // Create a content wrapper and copy HTML from the intial wizard structure
+        var contentWrapperTemplate = "<{0} class=\"{1}\"></{0}>",
+            stepsWrapperTemplate = "<{0} class=\"{1}\">{2}</{0}>",
+            orientation = getValidEnumValue(stepsOrientation, options.stepsOrientation),
+            verticalCssClass = (orientation === stepsOrientation.vertical) ? " vertical" : "",
+            contentWrapper = $(contentWrapperTemplate.format(options.contentContainerTag, "content " +     options.clearFixCssClass)),
+            stepsWrapper = $(stepsWrapperTemplate.format(options.stepsContainerTag, "steps " + options.clearFixCssClass, "<ul role=\"tablist\"></ul>"));
 
-    // Transform the wizard wrapper by wrapping the innerHTML in the content wrapper, then prepending the stepsWrapper
-    wizard.attr("role", "application").wrapInner(contentWrapper).prepend(stepsWrapper)
-        .addClass(options.cssClass + " " + options.clearFixCssClass + verticalCssClass);
+        // Transform the wizard wrapper by wrapping the innerHTML in the content wrapper, then prepending the stepsWrapper
+        wizard.attr("role", "application").wrapInner(contentWrapper).prepend(stepsWrapper)
+            .addClass(options.cssClass + " " + options.clearFixCssClass + verticalCssClass);
 
-    //Now that wizard is tansformed, select the the title and contents elements
-    var populatedContent = wizard.find('.content'),
-        stepTitles = populatedContent.children(options.headerTag),
-        stepContents = populatedContent.children(options.bodyTag);
+        //Now that wizard is tansformed, select the the title and contents elements
+        var populatedContent = wizard.find('.content'),
+            stepTitles = populatedContent.children(options.headerTag),
+            stepContents = populatedContent.children(options.bodyTag);
 
-    // Add WIA-ARIA support
-    stepContents.each(function (index) {
-        renderBody(wizard, state, $(this), index);
-    });
+        // Add WIA-ARIA support
+        stepContents.each(function (index) {
+            renderBody(wizard, state, $(this), index);
+        });
 
-    stepTitles.each(function (index) {
-        renderTitle(wizard, options, state, $(this), index);
-    });
+        stepTitles.each(function (index) {
+            renderTitle(wizard, options, state, $(this), index);
+        });
 
-    refreshStepNavigation(wizard, options, state);
-    renderPagination(wizard, options, state);
-}
+        refreshStepNavigation(wizard, options, state);
+        renderPagination(wizard, options, state);
+    }
 
 /**
  * Transforms the body to a proper tabpanel.

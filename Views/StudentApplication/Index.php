@@ -12,6 +12,7 @@ if(!isset($_SESSION['login_user'])){
         <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Residency Form</title>
+        <link rel="icon" href="../../Content/images/FAU_Favicon 1.png">
         <link rel="stylesheet" type="text/css" href="../../Content/ResidencyBundle.css">
         <link rel="stylesheet" href="../../Content/Steps/jquery.steps.css">
         <link rel="stylesheet" href="../../Content/Steps/main.css">
@@ -23,11 +24,19 @@ if(!isset($_SESSION['login_user'])){
         <!-- The import below does not seem to work 100% unless you include
         the integrity and crossorigin tag -->
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+        <style type="text/css">
+            .has-error .form-control {
+                border-color:#a94442 !important;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+            }
+            .has-success .form-control {
+                border-color: #3c763d !important;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+            }
+        </style>
 
-        <script>
-
-
-        </script>
     </head>
 
     <body>
@@ -104,48 +113,59 @@ if(!isset($_SESSION['login_user'])){
                 <section>
                     <h3><strong>Fill in the blank below:</strong></h3>
 
-                    <div class="row form-group">
-                        <label class="control-label col-md-2 required-field" for="firstname">First Name: </label>
-                        <div class="col-md-2">
-                            <input type="text" class="form-control required" name="firstname"> </div>
-                        <label class="control-label col-md-1" for="middlename">Middle Name: </label>
-                        <div class="col-md-2">
-                            <input type="text" class="form-control" name="middlename" placeholder=""> </div>
-                        <label class="control-label col-md-1 required-field" for="lastname">Last Name: </label>
-                        <div class="col-md-2">
-                            <input type="text" class="form-control required" name="lastname"> </div>
-                        <label class="control-label col-md-1" for="suffix">Suffix: </label>
-                        <div class="col-md-1">
-                            <select class="form-control" name="suffix">
-                                <option selected>Select One</option>
+                    <div class="row">
+                       <div class="row">
+                        <div class="form-group c1 required col-md-3 col-sm-3" data-cid="c1">
+                            <label class="control-label required-field" for="c1">First Name</label>
+                            <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-user" for="c1"></i> </span>
+                                <input type="text" class="form-control" id="c1" name="c1" value="" data-rule-required="true" /> </div>
+                        </div>
+                        <div class="form-group c49 required col-md-3" data-cid="c49">
+                            <label class="control-label required-field" for="c49">Last Name</label>
+                            <input type="text" class="form-control" id="c49" name="c49" value="" data-rule-required="true" /> </div>
+                        <div class="form-group c26 col-md-3" data-cid="c26">
+                            <label class="control-label" for="c26">Middle Name</label>
+                            <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-user"></i> </span>
+                                <input type="text" class="form-control" id="c26" name="c26" value="" /> </div>
+                        </div>
+                        <div class="form-group c83 col-md-2" data-cid="c83">
+                            <label class="control-label" for="c83">Suffix</label>
+                            <select class="form-control" id="c83" name="c83">
+                                <option value="">- Select -</option>
                                 <option value="Jr">Jr</option>
                                 <option value="Sr">Sr</option>
+                                <option value="I">I</option>
+                                <option value="II">II</option>
+                                <option value="III">III</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row form-group">
-                        <label class="control-label col-md-2 required-field" for="term">Term of Application: </label>
-                        <div class="col-md-2">
-                            <select class="form-control" name="TermSelect">
-                                <option value="default" selected>Select One</option>
-                                <option value="Fall">Fall</option>
+                    <div class="row">
+                        <div class="form-group c107 required col-md-3" data-cid="c107">
+                            <label class="control-label required-field" for="c107">Date of Birth</label>
+                            <div class="input-group date">
+                                <input type="text" class="form-control datepicker" id="c107" name="c107" value="" data-rule-required="true" data-datepicker-format="mm/dd/yyyy" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                        </div>
+                        <div class="form-group c90 required col-md-3" data-cid="c90">
+                            <label class="control-label required-field" for="c90">Term of Application</label>
+                            <select class="form-control" id="c90" name="c90" data-rule-required="true">
+                                <option value="">- Select -</option>
                                 <option value="Spring">Spring</option>
                                 <option value="Summer">Summer</option>
+                                <option value="Fall">Fall</option>
                             </select>
                         </div>
-                        <label class="control-label col-md-1 required-field" for="year">Year: </label>
-                        <div class="col-md-2">
-                            <input type="number" class="form-control required" name="year"> </div>
+                        <div class="form-group c97 required col-md-3 col-sm-3" data-cid="c97">
+                            <label class="control-label required-field" for="c97">Year</label>
+                            <input type="number" class="form-control" id="c97" name="c97" value="2017" data-rule-number="true" data-rule-required="true" /> </div>
                     </div>
-                    <div class="row form-group">
-                        <label class="control-label col-md-2 required-field" for="dob">Date of Birth: </label>
-                        <div class="col-md-2">
-                            <input type="text" class="form-control datepicker required" name="dob" placeholder="01/01/2016"> </div>
+                    <div class="row">
+                        <div class="form-group c2 required col-md-3" data-cid="c2">
+                            <label class="control-label required-field" for="c2">Email</label>
+                            <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-envelope"></i> </span>
+                                <input type="email" class="form-control" id="c2" name="c2" value="" data-rule-email="true" data-rule-required="true" /> </div>
+                        </div>
                     </div>
-                    <div class="row form-group">
-                        <label class="control-label col-md-2 required-field" for="email">Email: </label>
-                        <div class="col-md-2">
-                            <input type="email" class="form-control required" name="email" placeholder="jsnow2016@fau.edu"> </div>
                     </div>
                 </section>
                 <h4><strong>Dependency</strong></h4>
@@ -253,59 +273,140 @@ if(!isset($_SESSION['login_user'])){
                 </section>
                 <h4><strong>Documents</strong></h4>
                 <section>
-                    <strong>PROVISION OF DOCUMENTS TO SUPPORT CLAIM OF FLORIDA RESIDENCY:</strong>
-                    <p> <strong>Per s. 1009.21(3)(c), Florida Statutes, the residency determination must be documented by the submission of written or electronic verification that includes two or more of the documents identified below.  No single piece of evidence shall be conclusive.</strong> </p>
-                    <p><strong>A.  Claimant must provide at least one of the following of his/her personal documentation:</strong></p>
-
-                    <ul>
-                        <li> Florida Voter's Registration card:
-                            <input type="text" name="" value="">Issue Date:
-                            <input type="text" name="" value="">
-                        </li>
-                        <li class="row">
-                            <p>Florida Driver's license:
-                                <input type="text" name="" value="">Original Issue:
-                                <input type="text" name="" value=""> Current Issue Date:
-                                <input type="text">
-                            </p>
-                        </li>
-                        <li> Florida State indentification card:
-                            <input type="text" name="" value="">Original Issue Date:
-                            <input type="text" name="" value=""> Current Issue Date:
-                            <input type="text">
-                        </li>
-                        <li> Florida Vehicle Registration:
-                            <input type="text" name="" value="">Original Issue Date:
-                            <input type="text" name="" value=""> Current Issue Date:
-                            <input type="text">
-                        </li>
-
-                        <li> Proof of permanent home in Florida occupied as primary residence for 12 consecutive months prior to the student's enrollment. (Required: document such as a deed or other evidence of title to property used as primary residence, a homeowner's policy, a title insurance policy, evidence of a property tax payment on the primary residence, multiple leases reflecting a Florida address, or a lease of multiple years duration).
-                        </li>
-                        <li> Proof of a homestead exemption in Florida.(Required: document from the county tax collector demonstrating the application of a homestead exemption to the claimant's primary residence.)
-                        </li>
-                        <li>Official transcripts from a Florida high school for multiple years (2 or more years), if the Florida high school diploma or GED® was earned within the last 12 months. (Dates of Attendance:
-                            <input type="text" name="" value=""> Graduation Date:
-                            <input type="text" name="" value="">.)(Required: transcript)
-                        </li>
-                        <li> Proof of permanent full-time employment in Florida for at least 30 hours per week for a 12-month period. (Required: pay stubs or W-2 form for past 12 consecutive months and/or verification from employers, and/or an IRS 1099 with verification of employment for the past 12 consecutive months from an employer.)
-                        </li>
-                    </ul>
-
-                    <span><strong>B.   Claimant may provide one or more documents from the following categories to demonstrate residency in Florida (to be used in conjunction with one document from above):</strong></span>
-
-                    <ul>
-                        <li> Declaration of domicile in Florida in accordance with s. 222.17, Florida Statutes.</li>
-                        <li> Florida professional or occupational license.
-                        </li>
-                        <li> Florida incorporation.
-                        </li>
-                        <li/> Document evidencing family ties in Florida.
-                        </li>
-                        <li> Proof of membership in a Florida-based charitable or professional organization.
-                        </li>
-                        <li> Any other documentation that supports your request for resident status, including, but not limited to, utility bills and proof of 12 consecutive months of payments; a lease agreement and proof of 12 consecutive months of payments; or an official state, federal, or court document evidencing legal ties to Florida.</li>
-                    </ul>
+                    <div class="row">
+                        <div class="form-group " data-cid="Documents">
+                            <label class="control-label" for="Documents"><b>PROVISION OF DOCUMENTS TO SUPPORT CLAIM OF FLORIDA RESIDENCY</b></label>
+                            <p id="Documents-help-block" class="description"><strong>Per s. 1009.21(3)(c), Florida Statutes, the residency determination must be documented by the submission of written or electronic verification that includes two or more of the documents identified below. No single piece of evidence shall be conclusive.</strong></p>
+                        </div>
+                        <div class="form-group sectionA required" data-cid="sectionA">
+                            <label class="control-label" for="sectionA"><strong>A. Claimant must provide at least one of the following of his/her personal documentation:</strong></label>
+                                
+                                    <div class="checkbox">
+                                        <input id="A_1" name="A[]" type="checkbox" value="votersReg" data-rule-required="true">
+                                        <label for="A_1"> Florida Voter's registration card </label>
+                                    </div>
+                            <div class="row voterReg">
+                                <div class="form-group voterReg_Num required col-md-6" data-cid="voterReg_Num">
+                                    <label class="control-label" for="voterReg_Num">Voter Registration Number</label>
+                                    <input type="text" class="form-control" id="voterReg_Num" name="voterReg_Num" value="" data-rule-number="true" data-rule-required="true" /> </div>
+                                <div class="form-group voterReg_Date required col-md-6" data-cid="voterReg_Date">
+                                    <label class="control-label" for="voterReg_Date">Issue Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="voterReg_Date" name="voterReg_Date" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <input id="A_2" name="A[]" type="checkbox" value="driversLicense">
+                                <label for="A_2"> Florida Driver's license </label>
+                            </div>
+                            <div class="row license">
+                                <div class="form-group license_Num required col-md-4" data-cid="license_Num">
+                                    <label class="control-label" for="license_Num">Driver's License Number</label>
+                                    <input type="text" class="form-control" id="license_Num" name="license_Num" value="" data-rule-required="true" /> </div>
+                                <div class="form-group license_OrigDate required col-md-4" data-cid="license_OrigDate">
+                                    <label class="control-label" for="license_OrigDate">Original Issue Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="license_OrigDate" name="license_OrigDate" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                                <div class="form-group license_CurrDate required col-md-4" data-cid="license_CurrDate">
+                                    <label class="control-label" for="license_CurrDate">Current Issue Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="license_CurrDate" name="license_CurrDate" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <input id="A_3" name="A[]" type="checkbox" value="stateID">
+                                <label for="A_3"> Florida State ID </label>
+                            </div>
+                            <div class="row stateID">
+                                <div class="form-group stateID_Num required col-md-4" data-cid="stateID_Num">
+                                    <label class="control-label" for="stateID_Num">Florida State ID Number</label>
+                                    <input type="text" class="form-control" id="stateID_Num" name="stateID_Num" value="" data-rule-required="true" /> </div>
+                                <div class="form-group stateID_OrigDate required col-md-4" data-cid="stateID_OrigDate">
+                                    <label class="control-label" for="stateID_OrigDate">Original Issue Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="stateID_OrigDate" name="stateID_OrigDate" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                                <div class="form-group stateID_CurrDate required col-md-4" data-cid="stateID_CurrDate">
+                                    <label class="control-label" for="stateID_CurrDate">Current Issue Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="stateID_CurrDate" name="stateID_CurrDate" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <input id="A_4" name="A[]" type="checkbox" value="vehicleReg">
+                                <label for="A_4"> Florida Vehicle registration </label>
+                            </div>
+                            <div class="row vehicleReg">
+                                <div class="form-group vehicleReg_Num required col-md-4" data-cid="vehicleReg_Num">
+                                    <label class="control-label" for="vehicleReg_Num">Florida Vehicle registration Number</label>
+                                    <input type="text" class="form-control" id="vehicleReg_Num" name="vehicleReg_Num" value="" data-rule-required="true" /> </div>
+                                <div class="form-group vehicleReg_OrigDate required col-md-4" data-cid="vehicleReg_OrigDate">
+                                    <label class="control-label" for="vehicleReg_OrigDate">Original Issue Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="vehicleReg_OrigDate" name="vehicleReg_OrigDate" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                                <div class="form-group vehicleReg_CurrDate required col-md-4 " data-cid="vehicleReg_CurrDate">
+                                    <label class="control-label" for="vehicleReg_CurrDate">Current Issue Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="vehicleReg_CurrDate" name="vehicleReg_CurrDate" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <input id="A_5" name="A[]" type="checkbox" value="permHome">
+                                <label for="A_5"> Proof of permanent home in Florida occupied as primary residence for 12 consecutive months prior to the student’s enrollment. (Required: document such as a deed or other evidence of title to property used as primary residence, a homeowner’s policy, a title insurance policy, evidence of a property tax payment on the primary residence, multiple leases reflecting a Florida address, or a lease of multiple years’ duration.) </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="A_6" name="A[]" type="checkbox" value="homestead">
+                                <label for="A_6"> Proof of a homestead exemption in Florida. (Required: document from the county tax collector demonstrating the application of a homestead exemption to the claimant’s primary residence.) </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="A_7" name="A[]" type="checkbox" value="transcripts">
+                                <label for="A_7"> Official transcripts from a Florida high school for multiple years (2 or more years), if the Florida high school diploma or GED was earned within the last 12 months. </label>
+                            </div>
+                            <div class="row school">
+                                <div class="form-group school_AttendanceDate col-md-6 " data-cid="school_AttendanceDate">
+                                    <label class="control-label" for="school_AttendanceDate">Dates of Attendance</label>
+                                    <input type="text" class="form-control" id="school_AttendanceDate" name="school_AttendanceDate" value="" /> </div>
+                                <div class="form-group school_GradDate required col-md-6 " data-cid="school_GradDate">
+                                    <label class="control-label" for="school_GradDate">Graduation Date</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datepicker" id="school_GradDate" name="school_GradDate" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <input id="A_8" name="A[]" type="checkbox" value="employment">
+                                <label for="A_8"> Proof of permanent full-time employment in Florida for at least 30 hours per week for a 12-month period. (Required: pay stubs or W-2 form for past 12 consecutive months and/or verification from employers, and/or an IRS 1099 with verification of employment for the past 12 consecutive months from an employer.) </label>
+                            </div>
+                        </div>
+                        <div class="form-group sectionB" data-cid="sectionB">
+                            <label class="control-label" for="sectionB">B. Claimant may provide one or more documents from the following categories to demonstrate residency in Florida (to be used in conjunction with one document from above):</label>
+                            <div class="checkbox">
+                                <input id="B_1" name="B[]" type="checkbox" value="domicile">
+                                <label for="B_1"> Declaration of domicile in Florida in accordance with s. 222.17, Florida Statutes. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="B_2" name="B[]" type="checkbox" value="profLicense">
+                                <label for="B_2"> Florida professional or occupational license. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="B_3" name="B[]" type="checkbox" value="incorporation">
+                                <label for="B_3"> Florida incorporation. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="B_4" name="B[]" type="checkbox" value="family">
+                                <label for="B_4"> Document evidencing family ties in Florida </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="B_5" name="B[]" type="checkbox" value="membership">
+                                <label for="B_5"> Proof of membership in a Florida-based charitable or professional organization. </label>
+                            </div>
+                            <div class="checkbox">
+                                <input id="B_6" name="B[]" type="checkbox" value="other">
+                                <label for="B_6"> Any other documentation that supports your request for resident status, including, but not limited to, utility bills and proof of 12 consecutive months of payments; a lease agreement and proof of 12 consecutive months of payments; or an official state, federal, or court document evidencing legal ties to Florida. </label>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <h4><strong>Claimant</strong></h4>
                 <section>
@@ -372,16 +473,51 @@ if(!isset($_SESSION['login_user'])){
 -->
         <!--    necessary for jQuery steps-->
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
-        <script src="../../Scripts/jquery.steps.min.js"></script>
+        <script src="jquery.steps.js"></script>
         <script>
+            function resizeJquerySteps() {
+                $('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
+            }
             $(document).ready(function() {
                 debugger;
+                //Disable and hide fields
+                $(".voterReg :input").prop('disabled', true);
+                $(".voterReg").hide();
+                $(".license :input").prop('disabled', true);
+                $(".license").hide();
+                $(".stateID :input").prop('disabled', true);
+                $(".stateID").hide();
+                $(".vehicleReg :input").prop('disabled', true);
+                $(".vehicleReg").hide();
+                $(".school :input").prop('disabled', true);
+                $(".school").hide();
+                
                 $(function() {
                     $(".datepicker").datepicker();
                 });
-                $.validator.addMethod("valueNotEquals", function(value, element, arg) {
+                
+                //$(".voterReg :input").prop("disabled", true);
+                /*$("#A1").on("click", function(){
+                    $(".voterReg").hide();
+                    if($(".voterReg").prop('disabled')){
+                        $(".voterReg :input").prop('disabled', false);
+                        $(".voterReg").show();
+                    }
+                    else{
+                        $(".voterReg :input").prop('disabled', true);
+                        $(".voterReg").hide();
+                    }
+                });*/
+                
+                /*$.validator.addMethod("valueNotEquals", function(value, element, arg) {
                     return arg != value;
-                }, "Value must not equal arg.");
+                }, "Value must not equal arg.");*/
+                /*$(".voterReg").hide(1000);
+                $(".voterReg :input").prop("disabled", true);
+                $("#A_1").click(function(){
+                    $(".voterReg").toggle();
+                    $(".voterReg :input").prop('disabled', !$(".voterReg").prop('disabled'));
+                });*/
                 var form = $("#studentForm").show();
                 form.steps({
                     headerTag: "h4",
@@ -429,15 +565,111 @@ if(!isset($_SESSION['login_user'])){
                     errorPlacement: function errorPlacement(error, element) {
                         element.after(error);
                     },
-                    rules: {
+                    highlight: function(element) {
+                        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                    },
+                    unhighlight: function(element) {
+                        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    }
+                    /*highlight: function(element) {
+                        $(element).closest('.form-group').addClass('has-error');
+                    },
+                    unhighlight: function(element) {
+                        $(element).closest('.form-group').removeClass('has-error');
+                    }*/,
+                    errorElement: 'span',
+                    errorClass: 'help-block',
+                    errorPlacement: function(error, element) {
+                        if(element.parent('.input-group').length) {
+                            error.insertAfter(element.parent());
+                        } else {
+                            error.insertAfter(element);
+                        }
+                    }
+                    /*highlight: function(element) {
+                        var id_attr = "#" + $( element ).attr("id") + "1";
+                        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                        $(id_attr).removeClass('glyphicon-ok').addClass('glyphicon-remove');         
+                    },
+                    unhighlight: function(element) {
+                        var id_attr = "#" + $( element ).attr("id") + "1";
+                        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                        $(id_attr).removeClass('glyphicon-remove').addClass('glyphicon-ok');         
+                    },
+                    errorElement: 'span',
+                    errorClass: 'help-block',
+                    errorPlacement: function(error, element) {
+                        if(element.length) {
+                            error.insertAfter(element);
+                        } else {
+                            error.insertAfter(element);
+                        }
+                    }*/
+                    /*rules: {
                         TermSelect: {
-                            valueNotEquals: "default"
+                            valueNotEquals: "
                         }
                     },
                     messages: {
                         TermSelect: {
                             valueNotEquals: "Please select an item!"
                         }
+                    }*/
+                });
+                //All on click events must go AFTER form.steps function
+                $("#A_1").on("click", function(){
+                    console.log("Lole1");
+                    if($(".voterReg :input").prop('disabled')){
+                        $(".voterReg :input").prop('disabled', false);
+                        $(".voterReg").show("slow");
+                    }
+                    else{
+                        $(".voterReg :input").prop('disabled', true);
+                        $(".voterReg").hide("slow");
+                    }
+                });
+                $("#A_2").on("click", function(){
+                    console.log("Lole2");
+                    if($(".license :input").prop('disabled')){
+                        $(".license :input").prop('disabled', false);
+                        $(".license").show("slow");
+                    }
+                    else{
+                        $(".license :input").prop('disabled', true);
+                        $(".license").hide("slow");
+                    }
+                });
+                $("#A_3").on("click", function(){
+                    console.log("Lole3");
+                    if($(".stateID :input").prop('disabled')){
+                        $(".stateID :input").prop('disabled', false);
+                        $(".stateID").show("slow");
+                    }
+                    else{
+                        $(".stateID :input").prop('disabled', true);
+                        $(".stateID").hide("slow");
+                    }
+                });
+                $("#A_4").on("click", function(){
+                    console.log("Lole4");
+                    if($(".vehicleReg :input").prop('disabled')){
+                        $(".vehicleReg :input").prop('disabled', false);
+                        $(".vehicleReg").show("slow");
+                    }
+                    else{
+                        $(".vehicleReg :input").prop('disabled', true);
+                        $(".vehicleReg").hide("slow");
+                    }
+                });
+                $("#A_7").on("click", function(){
+                    console.log("Lole7");
+                    if($(".school :input").prop('disabled')){
+                        $(".school :input").prop('disabled', false);
+                        $(".school").show("slow");
+                    }
+                    else{
+                        $(".school :input").prop('disabled', true);
+                        $(".school").hide("slow");
                     }
                 });
             });
