@@ -132,17 +132,17 @@ if(!isset($_SESSION['login_user'])){
                         </div>
                         <label class="control-label col-md-1 required-field" for="year">Year: </label>
                         <div class="col-md-2">
-                            <input type="number" name="quantity" min="4" max="4" class="form-control required" name="year" placeholder="2016"> </div>
+                            <input type="number" class="form-control required" name="year"> </div>
                     </div>
                     <div class="row form-group">
                         <label class="control-label col-md-2 required-field" for="dob">Date of Birth: </label>
-                        <div class="col-md-1">
-                            <input type="text" class="form-control datepicker" name="dob" placeholder="01/01/2016"> </div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control datepicker required" name="dob" placeholder="01/01/2016"> </div>
                     </div>
                     <div class="row form-group">
                         <label class="control-label col-md-2 required-field" for="email">Email: </label>
                         <div class="col-md-2">
-                            <input type="text" class="form-control" name="email" placeholder="jsnow2016@fau.edu"> </div>
+                            <input type="email" class="form-control required" name="email" placeholder="jsnow2016@fau.edu"> </div>
                     </div>
                 </section>
                 <h4><strong>TO BE COMPLETED BY THE STUDENT SEEKING FLORIDA RESIDENCY FOR TUITION PURPOSES:</strong></h4>
