@@ -1,7 +1,7 @@
 /*==============================================================*/
 /* Database name:  RESIDENCY                                    */
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     12/4/2016 7:56:53 PM                         */
+/* Created on:     12/6/2016 11:09:27 PM                        */
 /*==============================================================*/
 
 
@@ -254,14 +254,15 @@ create table USER
    FIRST_NAME           varchar(50),
    LAST_NAME            varchar(50),
    Z_NUMBER             numeric(8,0) not null,
+   PASSWORD             varchar(255) not null,
    EMAIL_ADDRESS        varchar(50),
+   ACTIVATED            varchar(255),
    PHONE_NUMBER         varchar(25),
    ADDRESS              varchar(200),
    USER_SEQ_ENT_BY      numeric(10,0),
    DT_ENT               datetime,
    USER_SEQ_CHG_BY      numeric(10,0),
    DT_CHG               datetime,
-   PASSWORD             varchar(255) not null,
    primary key (USER_SEQ)
 );
 

@@ -79,7 +79,7 @@ if(!isset($_SESSION['login_user'])){
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="ResidentRadios" value=""> Non-Florida Resident
+                            <input type="radio" name="ResidentRadios" value="non"> Non-Florida Resident
                         </label>
                     </div>
 
@@ -254,7 +254,8 @@ if(!isset($_SESSION['login_user'])){
                 <h4><strong>Documents</strong></h4>
                 <section>
                     <strong>PROVISION OF DOCUMENTS TO SUPPORT CLAIM OF FLORIDA RESIDENCY:</strong>
-                    <p> <strong>Per s. 1009.21(3)(c), Florida Statutes, the residency determination must be documented by the submission of written or electronic verification that includes two or more of the documents identified below.  No single piece of evidence shall be conclusive.</strong> </p> <span><strong>A.  Claimant must provide at least one of the following of his/her personal documentation:</strong></span>
+                    <p> <strong>Per s. 1009.21(3)(c), Florida Statutes, the residency determination must be documented by the submission of written or electronic verification that includes two or more of the documents identified below.  No single piece of evidence shall be conclusive.</strong> </p>
+                    <p><strong>A.  Claimant must provide at least one of the following of his/her personal documentation:</strong></p>
 
                     <ul>
                         <li> Florida Voter's Registration card:
@@ -391,8 +392,6 @@ if(!isset($_SESSION['login_user'])){
                         if (currentIndex > newIndex) {
                             return true;
                         }
-                        var checkVal = $("#DependencyRadios:checked").val();
-
                         // Needed in some cases if the user went back (clean up)
                         if (currentIndex < newIndex) {
                             // To remove error styles
@@ -403,6 +402,10 @@ if(!isset($_SESSION['login_user'])){
                         return form.valid();
                     },
                     onStepChanged: function(event, currentIndex, priorIndex) {
+                        if (currentIndex === 1 && $("input[name='ResidentRadios']:checked").val() === "non") {
+                            form.steps("previous");
+                            //window.location.replace("../Home/index.php");
+                        }
                         if (currentIndex === 4 && $("input[name='DependencyRadios']:checked").val() != "ex") {
                             form.steps("next");
                         }
