@@ -28,13 +28,15 @@ if(!isset($_SESSION['login_user'])){
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">
         <style type="text/css">
             .has-error .form-control {
-                border-color:#a94442 !important;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+                border-color: #a94442 !important;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important;
             }
+
             .has-success .form-control {
                 border-color: #3c763d !important;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important;
             }
+
         </style>
 
     </head>
@@ -114,58 +116,58 @@ if(!isset($_SESSION['login_user'])){
                     <h3><strong>Fill in the blank below:</strong></h3>
 
                     <div class="row">
-                       <div class="row">
-                        <div class="form-group c1 required col-md-3 col-sm-3" data-cid="c1">
-                            <label class="control-label required-field" for="c1">First Name</label>
-                            <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-user" for="c1"></i> </span>
-                                <input type="text" class="form-control" id="c1" name="c1" value="" data-rule-required="true" /> </div>
+                        <div class="row">
+                            <div class="form-group c1 required col-md-3 col-sm-3" data-cid="c1">
+                                <label class="control-label required-field" for="c1">First Name</label>
+                                <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-user" for="c1"></i> </span>
+                                    <input type="text" class="form-control" id="c1" name="c1" value="" data-rule-required="true" /> </div>
+                            </div>
+                            <div class="form-group c49 required col-md-3" data-cid="c49">
+                                <label class="control-label required-field" for="c49">Last Name</label>
+                                <input type="text" class="form-control" id="c49" name="c49" value="" data-rule-required="true" /> </div>
+                            <div class="form-group c26 col-md-3" data-cid="c26">
+                                <label class="control-label" for="c26">Middle Name</label>
+                                <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-user"></i> </span>
+                                    <input type="text" class="form-control" id="c26" name="c26" value="" /> </div>
+                            </div>
+                            <div class="form-group c83 col-md-2" data-cid="c83">
+                                <label class="control-label" for="c83">Suffix</label>
+                                <select class="form-control" id="c83" name="c83">
+                                    <option value="">- Select -</option>
+                                    <option value="Jr">Jr</option>
+                                    <option value="Sr">Sr</option>
+                                    <option value="I">I</option>
+                                    <option value="II">II</option>
+                                    <option value="III">III</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group c49 required col-md-3" data-cid="c49">
-                            <label class="control-label required-field" for="c49">Last Name</label>
-                            <input type="text" class="form-control" id="c49" name="c49" value="" data-rule-required="true" /> </div>
-                        <div class="form-group c26 col-md-3" data-cid="c26">
-                            <label class="control-label" for="c26">Middle Name</label>
-                            <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-user"></i> </span>
-                                <input type="text" class="form-control" id="c26" name="c26" value="" /> </div>
+                        <div class="row">
+                            <div class="form-group c107 required col-md-3" data-cid="c107">
+                                <label class="control-label required-field" for="c107">Date of Birth</label>
+                                <div class="input-group date">
+                                    <input type="text" class="form-control datepicker" id="c107" name="c107" value="" data-rule-required="true" data-datepicker-format="mm/dd/yyyy" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
+                            </div>
+                            <div class="form-group c90 required col-md-3" data-cid="c90">
+                                <label class="control-label required-field" for="c90">Term of Application</label>
+                                <select class="form-control" id="c90" name="c90" data-rule-required="true">
+                                    <option value="">- Select -</option>
+                                    <option value="Spring">Spring</option>
+                                    <option value="Summer">Summer</option>
+                                    <option value="Fall">Fall</option>
+                                </select>
+                            </div>
+                            <div class="form-group c97 required col-md-3 col-sm-3" data-cid="c97">
+                                <label class="control-label required-field" for="c97">Year</label>
+                                <input type="number" class="form-control" id="c97" name="c97" value="2017" data-rule-number="true" data-rule-required="true" /> </div>
                         </div>
-                        <div class="form-group c83 col-md-2" data-cid="c83">
-                            <label class="control-label" for="c83">Suffix</label>
-                            <select class="form-control" id="c83" name="c83">
-                                <option value="">- Select -</option>
-                                <option value="Jr">Jr</option>
-                                <option value="Sr">Sr</option>
-                                <option value="I">I</option>
-                                <option value="II">II</option>
-                                <option value="III">III</option>
-                            </select>
+                        <div class="row">
+                            <div class="form-group c2 required col-md-3" data-cid="c2">
+                                <label class="control-label required-field" for="c2">Email</label>
+                                <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-envelope"></i> </span>
+                                    <input type="email" class="form-control" id="c2" name="c2" value="" data-rule-email="true" data-rule-required="true" /> </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group c107 required col-md-3" data-cid="c107">
-                            <label class="control-label required-field" for="c107">Date of Birth</label>
-                            <div class="input-group date">
-                                <input type="text" class="form-control datepicker" id="c107" name="c107" value="" data-rule-required="true" data-datepicker-format="mm/dd/yyyy" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
-                        </div>
-                        <div class="form-group c90 required col-md-3" data-cid="c90">
-                            <label class="control-label required-field" for="c90">Term of Application</label>
-                            <select class="form-control" id="c90" name="c90" data-rule-required="true">
-                                <option value="">- Select -</option>
-                                <option value="Spring">Spring</option>
-                                <option value="Summer">Summer</option>
-                                <option value="Fall">Fall</option>
-                            </select>
-                        </div>
-                        <div class="form-group c97 required col-md-3 col-sm-3" data-cid="c97">
-                            <label class="control-label required-field" for="c97">Year</label>
-                            <input type="number" class="form-control" id="c97" name="c97" value="2017" data-rule-number="true" data-rule-required="true" /> </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group c2 required col-md-3" data-cid="c2">
-                            <label class="control-label required-field" for="c2">Email</label>
-                            <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-envelope"></i> </span>
-                                <input type="email" class="form-control" id="c2" name="c2" value="" data-rule-email="true" data-rule-required="true" /> </div>
-                        </div>
-                    </div>
                     </div>
                 </section>
                 <h4><strong>Dependency</strong></h4>
@@ -280,11 +282,11 @@ if(!isset($_SESSION['login_user'])){
                         </div>
                         <div class="form-group sectionA required" data-cid="sectionA">
                             <label class="control-label" for="sectionA"><strong>A. Claimant must provide at least one of the following of his/her personal documentation:</strong></label>
-                                
-                                    <div class="checkbox">
-                                        <input id="A_1" name="A[]" type="checkbox" value="votersReg" data-rule-required="true">
-                                        <label for="A_1"> Florida Voter's registration card </label>
-                                    </div>
+
+                            <div class="checkbox">
+                                <input id="A_1" name="A[]" type="checkbox" value="votersReg" data-rule-required="true">
+                                <label for="A_1"> Florida Voter's registration card </label>
+                            </div>
                             <div class="row voterReg">
                                 <div class="form-group voterReg_Num required col-md-6" data-cid="voterReg_Num">
                                     <label class="control-label" for="voterReg_Num">Voter Registration Number</label>
@@ -421,7 +423,7 @@ if(!isset($_SESSION['login_user'])){
                             <input type="text" class="form-control" name="relationship" placeholder="Self"> </div>
                     </div>
                     <div class="row form-group" style="margin-left:10px; margin-right:10px">
-                        <label class="control-label col-md-2 required-field" for="claimantAdress">Claimant's address: </label>
+                        <label class="control-label col-md-2 required-field" for="claimantAddress">Claimant's address: </label>
                         <div class="col-md-4">
                             <input type="text" class="form-control required" name="claimantAddress" placeholder="North Pole"> </div>
                         <label class="control-label col-md-2" for="claimantTelephone">Telephone Number: </label>
@@ -440,21 +442,21 @@ if(!isset($_SESSION['login_user'])){
                         <p>I, the undersigned, hereby declare that I have read the foregoing document and that the facts stated in it are true and further affirm the authenticity of the information provided on all pages of this Residency Declaration. I understand that any false or misleading information on this Residency Declaration, or provided in support of this Residency Declaration, will subject me to penalties pursuant to section 837.06, Florida Statutes, for making a false statement. I give permission for the institution to review or examine any and all documents and records, including those accessible electronically, which may assist in support of my claim as a Florida resident for tuition purposes.</p>
 
                         <div class="row">
-                            <label class="control-label col-md-2 required-field" for="studentName">Student Name (Please Print): </label>
+                            <label class="control-label col-md-2 required-field" for="studentNameSign">Student Name (Please Print): </label>
                             <div class="col-md-2">
-                                <input type="text" class="form-control required" name="studentName" placeholder="Jon"> </div>
+                                <input type="text" class="form-control required" name="studentNameSign" placeholder="Jon"> </div>
 
-                            <label class="control-label col-md-1" for="claimantName">Claimant Name (if not the Student): </label>
+                            <label class="control-label col-md-1" for="claimantNameSign">Claimant Name (if not the Student): </label>
                             <div class="col-md-2">
-                                <input type="text" class="form-control" name="relationship" placeholder="Jon"> </div>
+                                <input type="text" class="form-control" name="claimantNameSign" placeholder="Jon"> </div>
                         </div>
                         <div class="row">
                             <label class="control-label col-md-2 required-field" for="signature">Signature: </label>
                             <div class="col-md-2">
                                 <input type="text" class="form-control required" name="signature" placeholder="Jon"> </div>
-                            <label class="control-label col-md-1 required-field" for="Date">Date </label>
+                            <label class="control-label col-md-1 required-field" for="DateSign">Date </label>
                             <div class="col-md-2">
-                                <input type="text" class="form-control datepicker required" name="Date"> </div>
+                                <input type="text" class="form-control datepicker required" name="DateSign"> </div>
                         </div>
                     </section>
             </form>
@@ -476,7 +478,9 @@ if(!isset($_SESSION['login_user'])){
         <script src="jquery.steps.js"></script>
         <script>
             function resizeJquerySteps() {
-                $('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
+                $('.wizard .content').animate({
+                    height: $('.body.current').outerHeight()
+                }, "slow");
             }
             $(document).ready(function() {
                 debugger;
@@ -491,11 +495,11 @@ if(!isset($_SESSION['login_user'])){
                 $(".vehicleReg").hide();
                 $(".school :input").prop('disabled', true);
                 $(".school").hide();
-                
+
                 $(function() {
                     $(".datepicker").datepicker();
                 });
-                
+
                 //$(".voterReg :input").prop("disabled", true);
                 /*$("#A1").on("click", function(){
                     $(".voterReg").hide();
@@ -508,7 +512,7 @@ if(!isset($_SESSION['login_user'])){
                         $(".voterReg").hide();
                     }
                 });*/
-                
+
                 /*$.validator.addMethod("valueNotEquals", function(value, element, arg) {
                     return arg != value;
                 }, "Value must not equal arg.");*/
@@ -560,6 +564,13 @@ if(!isset($_SESSION['login_user'])){
                     },
                     onFinished: function(event, currentIndex) {
                         alert("Submitted!");
+                        var data = $("#studentForm").serialize();
+                        var url = '../../Controllers/studentApplication.php';
+                        $.post(url, data, function(response) {
+                            console.log(response)
+                        }).fail(function(e) {
+                            alert("error" + e);
+                        });
                     }
                 }).validate({
                     errorPlacement: function errorPlacement(error, element) {
@@ -569,105 +580,101 @@ if(!isset($_SESSION['login_user'])){
                         $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
                     },
                     unhighlight: function(element) {
-                        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
-                    }
-                    /*highlight: function(element) {
-                        $(element).closest('.form-group').addClass('has-error');
-                    },
-                    unhighlight: function(element) {
-                        $(element).closest('.form-group').removeClass('has-error');
-                    }*/,
+                            $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                        }
+                        /*highlight: function(element) {
+                            $(element).closest('.form-group').addClass('has-error');
+                        },
+                        unhighlight: function(element) {
+                            $(element).closest('.form-group').removeClass('has-error');
+                        }*/
+                        ,
                     errorElement: 'span',
                     errorClass: 'help-block',
                     errorPlacement: function(error, element) {
-                        if(element.parent('.input-group').length) {
-                            error.insertAfter(element.parent());
-                        } else {
-                            error.insertAfter(element);
+                            if (element.parent('.input-group').length) {
+                                error.insertAfter(element.parent());
+                            } else {
+                                error.insertAfter(element);
+                            }
                         }
-                    }
-                    /*highlight: function(element) {
-                        var id_attr = "#" + $( element ).attr("id") + "1";
-                        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-                        $(id_attr).removeClass('glyphicon-ok').addClass('glyphicon-remove');         
-                    },
-                    unhighlight: function(element) {
-                        var id_attr = "#" + $( element ).attr("id") + "1";
-                        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
-                        $(id_attr).removeClass('glyphicon-remove').addClass('glyphicon-ok');         
-                    },
-                    errorElement: 'span',
-                    errorClass: 'help-block',
-                    errorPlacement: function(error, element) {
-                        if(element.length) {
-                            error.insertAfter(element);
-                        } else {
-                            error.insertAfter(element);
-                        }
-                    }*/
-                    /*rules: {
-                        TermSelect: {
-                            valueNotEquals: "
-                        }
-                    },
-                    messages: {
-                        TermSelect: {
-                            valueNotEquals: "Please select an item!"
-                        }
-                    }*/
+                        /*highlight: function(element) {
+                            var id_attr = "#" + $( element ).attr("id") + "1";
+                            $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                            $(id_attr).removeClass('glyphicon-ok').addClass('glyphicon-remove');
+                        },
+                        unhighlight: function(element) {
+                            var id_attr = "#" + $( element ).attr("id") + "1";
+                            $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                            $(id_attr).removeClass('glyphicon-remove').addClass('glyphicon-ok');
+                        },
+                        errorElement: 'span',
+                        errorClass: 'help-block',
+                        errorPlacement: function(error, element) {
+                            if(element.length) {
+                                error.insertAfter(element);
+                            } else {
+                                error.insertAfter(element);
+                            }
+                        }*/
+                        /*rules: {
+                            TermSelect: {
+                                valueNotEquals: "
+                            }
+                        },
+                        messages: {
+                            TermSelect: {
+                                valueNotEquals: "Please select an item!"
+                            }
+                        }*/
                 });
                 //All on click events must go AFTER form.steps function
-                $("#A_1").on("click", function(){
+                $("#A_1").on("click", function() {
                     console.log("Lole1");
-                    if($(".voterReg :input").prop('disabled')){
+                    if ($(".voterReg :input").prop('disabled')) {
                         $(".voterReg :input").prop('disabled', false);
                         $(".voterReg").show("slow");
-                    }
-                    else{
+                    } else {
                         $(".voterReg :input").prop('disabled', true);
                         $(".voterReg").hide("slow");
                     }
                 });
-                $("#A_2").on("click", function(){
+                $("#A_2").on("click", function() {
                     console.log("Lole2");
-                    if($(".license :input").prop('disabled')){
+                    if ($(".license :input").prop('disabled')) {
                         $(".license :input").prop('disabled', false);
                         $(".license").show("slow");
-                    }
-                    else{
+                    } else {
                         $(".license :input").prop('disabled', true);
                         $(".license").hide("slow");
                     }
                 });
-                $("#A_3").on("click", function(){
+                $("#A_3").on("click", function() {
                     console.log("Lole3");
-                    if($(".stateID :input").prop('disabled')){
+                    if ($(".stateID :input").prop('disabled')) {
                         $(".stateID :input").prop('disabled', false);
                         $(".stateID").show("slow");
-                    }
-                    else{
+                    } else {
                         $(".stateID :input").prop('disabled', true);
                         $(".stateID").hide("slow");
                     }
                 });
-                $("#A_4").on("click", function(){
+                $("#A_4").on("click", function() {
                     console.log("Lole4");
-                    if($(".vehicleReg :input").prop('disabled')){
+                    if ($(".vehicleReg :input").prop('disabled')) {
                         $(".vehicleReg :input").prop('disabled', false);
                         $(".vehicleReg").show("slow");
-                    }
-                    else{
+                    } else {
                         $(".vehicleReg :input").prop('disabled', true);
                         $(".vehicleReg").hide("slow");
                     }
                 });
-                $("#A_7").on("click", function(){
+                $("#A_7").on("click", function() {
                     console.log("Lole7");
-                    if($(".school :input").prop('disabled')){
+                    if ($(".school :input").prop('disabled')) {
                         $(".school :input").prop('disabled', false);
                         $(".school").show("slow");
-                    }
-                    else{
+                    } else {
                         $(".school :input").prop('disabled', true);
                         $(".school").hide("slow");
                     }
