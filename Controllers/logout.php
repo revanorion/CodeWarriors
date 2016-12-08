@@ -1,7 +1,7 @@
 <?php
 session_start(); //start session
-unset($_SESSION["user_name"]); //deletes the session
-$url = "index.php";
+unset($_SESSION["login_user"]); //deletes the session
+$url = "http://fauresidencyapp.byethost9.com";
 if(isset($_GET["session_expired"])) { //sends user to the main page
 	$url .= "?session_expired=1" . $_GET["session_expired"];
 }
