@@ -34,8 +34,7 @@ $(document).ready(function () {
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     }
-                }
-                else if (response == 0) {
+                } else if (response == 0) {
                     Command: toastr["error"]("Error creating user!", "Failed")
                     toastr.options = {
                         "closeButton": true,
@@ -54,8 +53,7 @@ $(document).ready(function () {
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     }
-                }
-                else {
+                } else {
                     Command: toastr["success"]("Successfully created account!", "Success")
                     toastr.options = {
                         "closeButton": true,
@@ -92,7 +90,7 @@ $(document).ready(function () {
             };
             //This will post to the login method in php server
             $.post(url, data, function (response) {
-                window.location.replace("../StudenApplication/index.php");
+                window.location.replace("../StudentApplication/index.php");
             }).fail(function (e) {
                 alert("error" + e);
             });
