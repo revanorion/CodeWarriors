@@ -85,6 +85,9 @@ form {
     font-size: 20px;
 }
 
+.panel-info > .panel-heading{
+    background-color:   #060054 !important;
+}
 
 /*End of Panels*/
 
