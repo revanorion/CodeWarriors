@@ -18,14 +18,14 @@ if (is_ajax()) {
 
 function registerUser($znumber, $password){
     require_once './db_connect.php';
-    $selectStmt = "SELECT USER_SEQ FROM user WHERE Z_NUMBER ='".$znumber."'";
+    $selectStmt = "SELECT USER_SEQ FROM USER WHERE Z_NUMBER ='".$znumber."'";
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         return -1;
     }
     else
     {
-        $insertStmt= "INSERT INTO user (Z_NUMBER, PASSWORD) VALUES ('".$znumber."', '".password_hash($password, PASSWORD_DEFAULT)."')";
+        $insertStmt= "INSERT INTO USER (Z_NUMBER, PASSWORD) VALUES ('".$znumber."', '".password_hash($password, PASSWORD_DEFAULT)."')";
         $result = $db->query($insertStmt);
         if (mysqli_affected_rows($db) > -1) {
             return 1;
@@ -37,7 +37,7 @@ function registerUser($znumber, $password){
 
 function loginUser($znumber, $password){
     require_once './db_connect.php';
-    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM user WHERE Z_NUMBER ='".$znumber."'";
+    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM USER WHERE Z_NUMBER ='".$znumber."'";
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -53,7 +53,7 @@ function loginUser($znumber, $password){
     }
     else
     {
-        echo "User doesnt exist";
+        echo "User doesnt exist ".$db->error;
     }
 }
 

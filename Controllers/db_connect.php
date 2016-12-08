@@ -8,8 +8,8 @@ $server_root = dirname($_SERVER['PHP_SELF']);
 
 $dbhost = 'sql205.byethost.com';  // Most likely will not need to be changed
 $dbname = 'b9_19286754_RESIDENCY';   // Needs to be changed to your designated table database name
-$dbuser = 'FAUresidency1234';   // Needs to be changed to reflect your LAMP server credentials
-$dbpass = 'wqa'; // Needs to be changed to reflect your LAMP server credentials
+$dbuser = 'b9_19286754';   // Needs to be changed to reflect your LAMP server credentials
+$dbpass = 'FAUresidency1234'; // Needs to be changed to reflect your LAMP server credentials
 
 $db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
