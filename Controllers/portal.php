@@ -18,34 +18,40 @@ if (is_ajax()) {
 
 function registerUser($znumber, $password){
     require_once './db_connect.php';
-    $selectStmt = "SELECT USER_SEQ FROM user WHERE Z_NUMBER ='".$znumber."'";
+    $selectStmt = "SELECT USER_SEQ FROM USER WHERE Z_NUMBER ='".$znumber."'";
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         return -1;
     }
     else
     {
-        $insertStmt= "INSERT INTO user (Z_NUMBER, PASSWORD) VALUES ('".$znumber."', '".password_hash($password, PASSWORD_DEFAULT)."')";
+        $insertStmt= "INSERT INTO USER (Z_NUMBER, PASSWORD) VALUES ('".$znumber."', '".password_hash($password, PASSWORD_DEFAULT)."')";
         $result = $db->query($insertStmt);
         if (mysqli_affected_rows($db) > -1) {
+            $selectStmt = "SELECT MAX(USER_SEQ) AS USER_SEQ FROM USER";
+                $Result = $db->query($selectStmt);
+            if (mysqli_num_rows($Result) > 0) {
+                while($row = mysqli_fetch_assoc($Result)) {
+                    return $row["SEQ"];
+                }
+            }
             return 1;
         }
-        return 0;
+        return $db->error;
     }
 }
 
 
 function loginUser($znumber, $password){
     require_once './db_connect.php';
-    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM user WHERE Z_NUMBER ='".$znumber."'";
+    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM USER WHERE Z_NUMBER ='".$znumber."'";
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password, $row["PASSWORD"])){
             //this will store the session vars
-            $_SESSION["login_user"] = $znumber;
-            $_SESSION["login_user_id"] = $row["USER_SEQ"];
-            $_SESSION["image_posts"] = null;
+            $_SESSION["login_user_znum"] = $znumber;
+            $_SESSION["login_user"] = $row["USER_SEQ"];
             echo "your in".$_SESSION["login_user"];
         }
         else{
@@ -54,7 +60,7 @@ function loginUser($znumber, $password){
     }
     else
     {
-        echo "User doesnt exist";
+        echo "User doesnt exist ".$db->error;
     }
 }
 

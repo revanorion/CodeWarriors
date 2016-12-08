@@ -416,7 +416,7 @@ if(!isset($_SESSION['login_user'])){
                     <h3><strong>TO BE COMPLETED BY THE CLAIMANT / PERSON CLAIMING FLORIDA RESIDENCY</strong></h3>
                     <p>Note: If the student is a dependent, the parent is the claimant and will complete this section and provide evidence of residency supporting the claim. If the student is independent, the student is the claimant and will complete this section and provide evidence of residency supporting the claim. <em>No single document shall be conclusive in establishing residency.  Additional documentation, other than what is prescribed, may be requested in some cases.  All documentation provided is subject to verification.  Evidence of ties to another state may result in denial of Florida residency for tuition purposes.</em></p>
                     <div class="row form-group" style="margin-left:10px; margin-right:10px">
-                        <label class="control-label col-md-2 required-field" for="claimantname">Claimant/Name of Person claiming FL Residency: </label>
+                        <label class="control-label col-md-2 required-field" for="claimantName">Claimant/Name of Person claiming FL Residency: </label>
                         <div class="col-md-4">
                             <input type="text" class="form-control required" name="claimantName" placeholder="Jon Snow"> </div>
                         <label class="control-label col-md-2" for="relationship">Claimant Relationship to Student: </label>
