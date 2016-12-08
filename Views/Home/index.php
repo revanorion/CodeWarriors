@@ -50,8 +50,9 @@
                     </a>
                 </div>
             </div>
+            <br>
             <div class="row">
-                <div class="col-md-12 text-center"> ! Please be sure to read the Getting Started guide below before starting an application </div>
+                <div class="col-md-12 text-center"> Please be sure to read the Getting Started guide below before starting an application </div>
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
