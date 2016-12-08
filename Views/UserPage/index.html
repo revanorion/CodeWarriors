@@ -92,7 +92,7 @@ if(!isset($_SESSION['login_user'])){
                 <h3 id="user_name" class="panel-title" ><strong>Jon Snow</strong></h3>
 
                 <span class="pull-right">
-                    <a href="edit.html"  data-toggle="tooltip" type="button" class="btn btn-sm "><i class="glyphicon glyphicon-edit"></i>
+                    <a href="user-profile-edit.html"  data-toggle="tooltip" type="button" class="btn btn-sm "><i class="glyphicon glyphicon-edit"></i></a>
                 </span>
 
             </div>
@@ -105,20 +105,24 @@ if(!isset($_SESSION['login_user'])){
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td>Principle:</td>
+                        <td>Program:</td>
                         <td id="user-principle-field">Computer Science</td>
                       </tr>
                         <tr>
                         <td>Date of Birth:</td>
                         <td id="user-dob">01/24/1988</td>
                       </tr>
+                        <tr>
+                        <td>Gender:</td>
+                        <td>Male</td>
+                      </tr>
+                    <tr>
+                        <td>Campus Location:</td>
+                        <td>Boca Raton, FL</td>
+                      </tr>
                       <tr>
                         <td>Admission date:</td>
                         <td id="user-admission-date">06/23/3000</td>
-                      </tr>
-                    <tr>
-                        <td>Gender:</td>
-                        <td>Male</td>
                       </tr>
                         <tr>
                         <td>Home Address:</td>
@@ -136,6 +140,7 @@ if(!isset($_SESSION['login_user'])){
 
                     </tbody>
                   </table>
+
                 </div>
               </div>
             </div>
