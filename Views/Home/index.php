@@ -1,11 +1,3 @@
-<?php
-session_start();
- // Includes Login Script
-if(!isset($_SESSION['login_user'])){
-        header("location: ../Portal/index.php");
-}
-
-?>
     <!DOCTYPE html>
 
     <head>
