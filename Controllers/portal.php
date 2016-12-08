@@ -30,7 +30,7 @@ function registerUser($znumber, $password){
         if (mysqli_affected_rows($db) > -1) {
             return 1;
         }
-        return 0;
+        return $db->error;
     }
 }
 
@@ -43,9 +43,8 @@ function loginUser($znumber, $password){
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password, $row["PASSWORD"])){
             //this will store the session vars
-            $_SESSION["login_user"] = $znumber;
-            $_SESSION["login_user_id"] = $row["USER_SEQ"];
-            $_SESSION["image_posts"] = null;
+            $_SESSION["login_user_znum"] = $znumber;
+            $_SESSION["login_user"] = $row["USER_SEQ"];
             echo "your in".$_SESSION["login_user"];
         }
         else{
