@@ -90,7 +90,7 @@ $(document).ready(function () {
             };
             //This will post to the login method in php server
             $.post(url, data, function (response) {
-                window.location.replace("../StudentApplication/index.php");
+                window.location.replace("../StudentApplication/Index.php");
             }).fail(function (e) {
                 alert("error" + e);
             });
