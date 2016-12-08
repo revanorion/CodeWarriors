@@ -60,7 +60,7 @@ if(isset($_SESSION['login_user'])){
             </div>
             <div class="row">
                 <div class="col-md-4"></div>
-                <div class="col-md-4 text-center"> Please enter your FAU Z-number (excluding the Z) to login and get started on your application</div>
+                <div class="col-md-4 text-center"> Please enter your FAU Email to login and get started on your application</div>
             </div>
             <form id="loginForm" class="form-group" action="../../Controllers/portal.php">
                 <div class="row">
