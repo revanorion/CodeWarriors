@@ -28,6 +28,13 @@ function registerUser($znumber, $password){
         $insertStmt= "INSERT INTO USER (Z_NUMBER, PASSWORD) VALUES ('".$znumber."', '".password_hash($password, PASSWORD_DEFAULT)."')";
         $result = $db->query($insertStmt);
         if (mysqli_affected_rows($db) > -1) {
+            $selectStmt = "SELECT MAX(USER_SEQ) AS USER_SEQ FROM USER";
+                $Result = $db->query($selectStmt);
+            if (mysqli_num_rows($Result) > 0) {
+                while($row = mysqli_fetch_assoc($Result)) {
+                    return $row["SEQ"];
+                }
+            }
             return 1;
         }
         return $db->error;
