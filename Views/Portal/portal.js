@@ -4,13 +4,13 @@ $(document).ready(function () {
     'use strict';
     $('#sign-up').on('click', function () {
         debugger;
-        var znumber = $('#znumber').val();
+        var email = $('#email').val();
         var password = $('#password').val();
-        if (znumber != "" && password != "") {
+        if (email != "" && password != "") {
             var url = $('#loginForm').attr('action');
             var data = {
                 'signup': true,
-                'znumber': znumber,
+                'email': email,
                 'password': password
             };
             //This will post to the signup method in php server
@@ -79,18 +79,18 @@ $(document).ready(function () {
         }
     });
     $('#login').on('click', function () {
-        var znumber = $('#znumber').val();
+        var email = $('#email').val();
         var password = $('#password').val();
-        if (znumber != "" && password != "") {
+        if (email != "" && password != "") {
             var url = '../../../Controllers/portal.php';
             var data = {
                 'login': true,
-                'znumber': znumber,
+                'email': email,
                 'password': password
             };
             //This will post to the login method in php server
             $.post(url, data, function (response) {
-                window.location.replace("../StudentApplication/index.php");
+                window.location.replace("../StudentApplication/Index.php");
             }).fail(function (e) {
                 alert("error" + e);
             });

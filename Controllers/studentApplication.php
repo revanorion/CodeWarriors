@@ -14,7 +14,7 @@ if (is_ajax()) {
 }
 function createForm(){
     include($_SERVER['DOCUMENT_ROOT']."/Controllers/db_connect.php");
-    $insertStmt = "INSERT INTO STUDENT (STUDENT_NAME, Z_NUMBER, BIRTHDAY) VALUES('".$_POST['c1']."', '".$_SESSION["login_user_znum"]."', '".$_POST['c107 ']."')";
+    $insertStmt = "INSERT INTO STUDENT (STUDENT_NAME, BIRTHDAY) VALUES('".$_POST['c1']."', '".$_POST['c107 ']."')";
     $result = $db->query($insertStmt);
     if (mysqli_affected_rows($db) > -1) {
         $insertStmt="INSERT INTO CLAIMING_RESIDENCY (PERSON_NAME, CLAIMANT_RELATIONSHIP, ADDRESS, PHONE_NUMBER, RESIDENCY_DATE) VALUES ('".$_POST['claimantName']."', '".$_POST['relationship']."', '".$_POST['claimantAddress']."', '".$_POST['claimantTelephone']."', '".$_POST['DateOfResidency']."')";

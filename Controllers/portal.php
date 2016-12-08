@@ -8,31 +8,31 @@ function is_ajax() {
 
 //This checks which ajax post is called.
 if (is_ajax()) {
-    if(isset($_POST['signup']) && !empty($_POST['znumber']) && !empty($_POST['password'])) {
-        echo registerUser($_POST['znumber'], $_POST['password']);
+    if(isset($_POST['signup']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+        echo registerUser($_POST['email'], $_POST['password']);
     }
-    if(isset($_POST['login']) && !empty($_POST['znumber']) && !empty($_POST['password'])) {
-        echo loginUser($_POST['znumber'], $_POST['password']);
+    if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+        echo loginUser($_POST['email'], $_POST['password']);
     }
 }
 
-function registerUser($znumber, $password){
+function registerUser($email, $password){
     require_once './db_connect.php';
-    $selectStmt = "SELECT USER_SEQ FROM USER WHERE Z_NUMBER ='".$znumber."'";
+    $selectStmt = "SELECT USER_SEQ FROM USER WHERE EMAIL_ADDRESS ='".$email."'";
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         return -1;
     }
     else
     {
-        $insertStmt= "INSERT INTO USER (Z_NUMBER, PASSWORD) VALUES ('".$znumber."', '".password_hash($password, PASSWORD_DEFAULT)."')";
+        $insertStmt= "INSERT INTO USER (EMAIL_ADDRESS, PASSWORD) VALUES ('".$email."', '".password_hash($password, PASSWORD_DEFAULT)."')";
         $result = $db->query($insertStmt);
         if (mysqli_affected_rows($db) > -1) {
             $selectStmt = "SELECT MAX(USER_SEQ) AS USER_SEQ FROM USER";
                 $Result = $db->query($selectStmt);
             if (mysqli_num_rows($Result) > 0) {
                 while($row = mysqli_fetch_assoc($Result)) {
-                    return $row["SEQ"];
+                    //return $row["USER_SEQ"];
                 }
             }
             return 1;
@@ -42,9 +42,9 @@ function registerUser($znumber, $password){
 }
 
 
-function loginUser($znumber, $password){
+function loginUser($email, $password){
     require_once './db_connect.php';
-    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM USER WHERE Z_NUMBER ='".$znumber."'";
+    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM USER WHERE EMAIL_ADDRESS ='".$email."'";
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
