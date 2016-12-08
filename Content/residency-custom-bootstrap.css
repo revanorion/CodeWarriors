@@ -85,6 +85,18 @@ form {
     font-size: 20px;
 }
 
+.panel-info .panel-heading{
+    background-image: none !important;
+    background-color: #003366 !important;
+
+}
+
+.container .row .toppad .panel-body .table
+{
+	font-family: san-serif;
+	font-size:18px;
+}
+
 
 /*End of Panels*/
 

@@ -1,0 +1,159 @@
+<?php
+session_start();
+ // Includes Login Script
+if(!isset($_SESSION['login_user'])){
+    header("location: ../Portal/index.php");
+}
+?>
+    <!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Residency Form</title>
+        <link rel="icon" href="../../Content/images/FAU_Favicon 1.png">
+        <link rel="stylesheet" type="text/css" href="../../Content/ResidencyBundle.css">
+        <link rel="stylesheet" href="../../Content/Steps/jquery.steps.css">
+        <link rel="stylesheet" href="../../Content/Steps/main.css">
+        <link rel="stylesheet" href="../../Content/Steps/normalize.css">
+        <script src="../../Scripts/jquery-2.2.3.min.js" type="text/javascript"></script>
+        <script src="../../Scripts/ResidencyBundle.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../Content/residency-custom-bootstrap.css">
+        <!-- The import below does not seem to work 100% unless you include
+        the integrity and crossorigin tag -->
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+        <style type="text/css">
+            .has-error .form-control {
+                border-color: #a94442 !important;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important;
+            }
+
+            .has-success .form-control {
+                border-color: #3c763d !important;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important;
+            }
+
+        </style>
+
+    </head>
+
+
+
+    <body>
+
+     <!-- BEGINNING Leave this in every page -->
+        <header class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3">
+                        <a href="/" class="header-logo" title="Florida Atlantic University"> <img id="fau-header" class="img-responsive pull-left" src="../../Content/Images/fau-home-logo.png" /> </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Navigation -->
+        <nav id="mainNav" class="navbar navbar-default  navbar-custom">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> Menu<i></i> </button> <a class="navbar-brand" id="navtext" href="#page-top">FAU</a> </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#home"></a>
+                        </li>
+                        <li class="page-scroll"> <a href="#">Home</a> </li>
+                        <li class="page-scroll"> <a href="#">Application</a> </li>
+                        <li class="page-scroll"> <a href="#">Login</a> </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+    <!--BEGINNNING OF USER PAGE-->
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+          <div class="panel panel-info">
+
+            <div class="panel-heading">
+
+                <h3 id="user_name" class="panel-title" ><strong>Jon Snow</strong></h3>
+
+                <span class="pull-right">
+                    <a href="user-profile-edit.html"  data-toggle="tooltip" type="button" class="btn btn-sm "><i class="glyphicon glyphicon-edit"></i></a>
+                </span>
+
+            </div>
+
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img src="../../Content/Images/male-profile-img.jpg" class="img-rectangle img-responsive"> </div>
+
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Program:</td>
+                        <td id="user-principle-field">Computer Science</td>
+                      </tr>
+                        <tr>
+                        <td>Date of Birth:</td>
+                        <td id="user-dob">01/24/1988</td>
+                      </tr>
+                        <tr>
+                        <td>Gender:</td>
+                        <td>Male</td>
+                      </tr>
+                    <tr>
+                        <td>Campus Location:</td>
+                        <td>Boca Raton, FL</td>
+                      </tr>
+                      <tr>
+                        <td>Admission date:</td>
+                        <td id="user-admission-date">06/23/3000</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address:</td>
+                        <td id="user-address">North Pole</td>
+                      </tr>
+                      <tr>
+                        <td>Email:</td>
+                        <td><a href="mailto:JonSnow@fau.edu">JonSnow@fau.edu</a></td>
+                        </tr>
+                        <td>Phone Number:</td>
+                        <td>111-111-1111 (Cell)<br>000-000-0000 (Home)
+                        </td>
+
+                      </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="col-md-6" style="float:right">
+                        <a href="user-profile-edit.html" class="btn btn-primary">Edit Profile</a>
+                        <a href="" class="btn btn-primary">Exit</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+</div>
+
+</body>
+
+
+
