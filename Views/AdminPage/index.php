@@ -1,9 +1,41 @@
 <?php
 session_start();
  // Includes Login Script
-if(!isset($_SESSION['login_user'])){
-    //header("location: ../Portal/index.php");
+echo $_SESSION['login_user_role'];
+if(!isset($_SESSION['login_user']) && $_SESSION['login_user_role']==2) {
+    header("location: ../Portal/index.php");
 }
+if (isset($_POST['sendmail'])){
+$url = "www.fauresidencyapp.byethost9.com";
+date_default_timezone_set('Etc/UTC');
+require 'PHPMailer/PHPMailerAutoload.php';
+$mail = new PHPMailer;
+$mail->isSMTP();
+// $mail->SMTPDebug = 2;
+$mail->Debugoutput = 'html';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = true;
+$mail->Username = "fauresidency@gmail.com";
+$mail->Password = "FAUresidency1234";
+$mail->setFrom('confirmation@fauresidency.com', 'FAU Residency');
+$mail->addAddress("imnadrii@gmail.com", '');
+$mail->AddBCC("revanorion@gmail.com", "first");
+$mail->AddBCC("portlandya@gmail.com", "second");
+$mail->AddBCC("iimnad@gmail.com", "third");
+$mail->AddBCC("thewld3@gmail.com","fourth");
+$mail->Subject = 'Please review the information about your account';
+// $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+$mail->Body = "Please click on the url below to activate your account $url";
+// $mail->addAttachment('images/phpmailer_mini.png');
+
+
+if (!$mail->send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    echo "Message sent!";
+}}
 ?>
     <!DOCTYPE html>
 
@@ -26,13 +58,9 @@ if(!isset($_SESSION['login_user'])){
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">
-        <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
-    </head>
-
-
+        <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"> </head>
 
     <body>
-
         <!-- BEGINNING Leave this in every page -->
         <header class="banner">
             <div class="container">
@@ -65,40 +93,27 @@ if(!isset($_SESSION['login_user'])){
                                 ?>
                                 </a>
                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="../../Controllers/logout.php">Logout</a> </li>
-
                     </ul>
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>
                 <!-- /.container-fluid -->
         </nav>
-
         <!--BEGINNNING OF PAGE-->
-
-
         <div class="container-fluid">
             <div class="row">
-
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad">
-
-
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Admin</strong></h3>
-                        </div>
+                            <h3 class="panel-title"><strong>Admin</strong></h3> </div>
                         <div class="panel-body">
                             <table id="results-table" data-request-url="" data-table-onload-url="../../Controllers/adminData.php" data-modal-header="Edit AIA" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            Student Name
-                                        </th>
-                                        <th>
-                                            Z Number </th>
-                                        <th>
-                                            Application Year </th>
-                                        <th>
-                                            Status </th>
+                                        <th> Student Name </th>
+                                        <th> Z Number </th>
+                                        <th> Application Year </th>
+                                        <th> Status </th>
                                     </tr>
                                 </thead>
                             </table>
@@ -106,12 +121,22 @@ if(!isset($_SESSION['login_user'])){
                     </div>
                 </div>
             </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <form method="post">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <button type="submit" name="sendmail" class="btn btn-primary btn-block btn-large">Send Mass Mail</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
             <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
             <script type="text/javascript">
                 debugger;
                 var table = $('#results-table').DataTable({
-                    "sAjaxSource": "../../Controllers/adminData.php",
-                    "aoColumns": [{
+                    "sAjaxSource": "../../Controllers/adminData.php"
+                    , "aoColumns": [{
                         "mData": "STUDENT_NAME"
                     }, {
                         "mData": "Z_NUMBER"
@@ -121,6 +146,5 @@ if(!isset($_SESSION['login_user'])){
                         "mData": "STATUS"
                     }]
                 });
-
             </script>
     </body>
