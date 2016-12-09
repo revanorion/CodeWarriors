@@ -54,6 +54,7 @@ if(!isset($_SESSION['login_user'])){
                 color: #fff !important;
                 cursor: default !important;
             }
+
         </style>
 
     </head>
@@ -82,12 +83,20 @@ if(!isset($_SESSION['login_user'])){
                         </li>
                         <li class="page-scroll"> <a href="#">Home</a> </li>
                         <li class="page-scroll"> <a href="#">Application</a> </li>
-                        <li class="page-scroll"> <a href="#">Login</a> </li>
+                        <li class="page-scroll">
+                            <button type="button" class="btn btn-lg btn-default dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">
+                                    <?php
+                                echo $_SESSION["login_user_email"];
+                                ?>
+                                </a>
+                                <div class="dropdown-divider"></div> <a class="dropdown-item" href="../../Controllers/logout.php">Logout</a> </li>
                     </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
         </nav>
         <!-- END Leave this in every Page -->
         <div class="container-fluid body-content">
@@ -520,182 +529,183 @@ if(!isset($_SESSION['login_user'])){
                 }, "slow");
             }
             $(document).ready(function() {
-                        debugger;
-                        $(function() {
-                            $(".datepicker").datepicker();
-                        });
-                        //Disable and hide fields
+                debugger;
+                $(function() {
+                    $(".datepicker").datepicker();
+                });
+                //Disable and hide fields
+                $(".voterReg :input").prop('disabled', true);
+                $(".voterReg").hide();
+                $(".license :input").prop('disabled', true);
+                $(".license").hide();
+                $(".stateID :input").prop('disabled', true);
+                $(".stateID").hide();
+                $(".vehicleReg :input").prop('disabled', true);
+                $(".vehicleReg").hide();
+                $(".school :input").prop('disabled', true);
+                $(".school").hide();
+
+                //$(".voterReg :input").prop("disabled", true);
+                /*$("#A1").on("click", function(){
+                    $(".voterReg").hide();
+                    if($(".voterReg").prop('disabled')){
+                        $(".voterReg :input").prop('disabled', false);
+                        $(".voterReg").show();
+                    }
+                    else{
                         $(".voterReg :input").prop('disabled', true);
                         $(".voterReg").hide();
-                        $(".license :input").prop('disabled', true);
-                        $(".license").hide();
-                        $(".stateID :input").prop('disabled', true);
-                        $(".stateID").hide();
-                        $(".vehicleReg :input").prop('disabled', true);
-                        $(".vehicleReg").hide();
-                        $(".school :input").prop('disabled', true);
-                        $(".school").hide();
+                    }
+                });*/
 
-                        //$(".voterReg :input").prop("disabled", true);
-                        /*$("#A1").on("click", function(){
-                            $(".voterReg").hide();
-                            if($(".voterReg").prop('disabled')){
-                                $(".voterReg :input").prop('disabled', false);
-                                $(".voterReg").show();
-                            }
-                            else{
-                                $(".voterReg :input").prop('disabled', true);
-                                $(".voterReg").hide();
-                            }
-                        });*/
+                /*$.validator.addMethod("valueNotEquals", function(value, element, arg) {
+                    return arg != value;
+                }, "Value must not equal arg.");*/
+                /*$(".voterReg").hide(1000);
+                $(".voterReg :input").prop("disabled", true);
+                $("#A_1").click(function(){
+                    $(".voterReg").toggle();
+                    $(".voterReg :input").prop('disabled', !$(".voterReg").prop('disabled'));
+                });*/
+                var form = $("#studentForm").show();
 
-                        /*$.validator.addMethod("valueNotEquals", function(value, element, arg) {
-                            return arg != value;
-                        }, "Value must not equal arg.");*/
-                        /*$(".voterReg").hide(1000);
-                        $(".voterReg :input").prop("disabled", true);
-                        $("#A_1").click(function(){
-                            $(".voterReg").toggle();
-                            $(".voterReg :input").prop('disabled', !$(".voterReg").prop('disabled'));
-                        });*/
-                        var form = $("#studentForm").show();
+                //Set to false during production
+                var debug = false;
 
-                        //Set to false during production
-                        var debug = false;
-
+                if (debug) {
+                    $('#debug').html('<h1><b>DEBUG IS ON</b></h1>');
+                }
+                form.steps({
+                    headerTag: "h4",
+                    bodyTag: "section",
+                    transitionEffect: "slideLeft",
+                    onStepChanging: function(event, currentIndex, newIndex) {
+                        // Allways allow previous action even if the current form is not valid!
                         if (debug) {
-                            $('#debug').html('<h1><b>DEBUG IS ON</b></h1>');
+                            return true;
                         }
-                        form.steps({
-                            headerTag: "h4",
-                            bodyTag: "section",
-                            transitionEffect: "slideLeft",
-                            onStepChanging: function(event, currentIndex, newIndex) {
-                                // Allways allow previous action even if the current form is not valid!
-                                if (debug) {
-                                    return true;
-                                }
-                                if (currentIndex > newIndex) {
-                                    return true;
-                                }
-                                // Needed in some cases if the user went back (clean up)
-                                if (currentIndex < newIndex) {
-                                    // To remove error styles
-                                    form.find(".body:eq(" + newIndex + ") label.error").remove();
-                                    form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
-                                }
+                        if (currentIndex > newIndex) {
+                            return true;
+                        }
+                        // Needed in some cases if the user went back (clean up)
+                        if (currentIndex < newIndex) {
+                            // To remove error styles
+                            form.find(".body:eq(" + newIndex + ") label.error").remove();
+                            form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
+                        }
 
 
-                                form.validate().settings.ignore = ":disabled,:hidden";
-                                return form.valid();
+                        form.validate().settings.ignore = ":disabled,:hidden";
+                        return form.valid();
 
-                            },
-                            onStepChanged: function(event, currentIndex, priorIndex) {
-                                if (currentIndex === 1 && $("input[name='ResidentRadios']:checked").val() === "non") {
-                                    form.steps("previous");
-                                    //window.location.replace("../Home/index.php");
-                                }
-                                if (currentIndex === 4 && $("input[name='DependencyRadios']:checked").val() != "ex") {
-                                    form.steps("next");
-                                }
-                                if (currentIndex === 8) {
+                    },
+                    onStepChanged: function(event, currentIndex, priorIndex) {
+                        if (currentIndex === 1 && $("input[name='ResidentRadios']:checked").val() === "non") {
+                            form.steps("previous");
+                            //window.location.replace("../Home/index.php");
+                        }
+                        if (currentIndex === 4 && $("input[name='DependencyRadios']:checked").val() != "ex") {
+                            form.steps("next");
+                        }
+                        if (currentIndex === 8) {
 
-                                }
-                            },
-                            onFinishing: function(event, currentIndex) {
-                                form.validate().settings.ignore = ":disabled";
-                                return debug || form.valid();
-                            },
-                            onFinished: function(event, currentIndex) {
-                                alert("Submitted!");
-                                var data = $("#studentForm").serialize();
-                                var url = '../../Controllers/studentApplication.php';
-                                $.post(url, data, function(response) {
-                                    console.log(response)
-                                }).fail(function(e) {
-                                    alert("error" + e);
-                                });
-                            }
-                        }).validate({
-                            errorPlacement: function errorPlacement(error, element) {
-                                element.after(error);
-                            },
-                            highlight: function(element) {
-                                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-                            },
-                            unhighlight: function(element) {
-                                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
-                            },
-                            errorElement: 'span',
-                            errorClass: 'help-block',
-                            errorPlacement: function(error, element) {
-                                if (element.parent('.input-group').length) {
-                                    if ((element).is(":checkbox")) {
-                                        error.appendTo("#errorSpan");
-                                    } else if (element.parent('.input-group').length) {
-                                        error.insertAfter(element.parent());
-                                    } else {
-                                        error.insertAfter(element);
-                                    }
-                                }
-                            }
+                        }
+                    },
+                    onFinishing: function(event, currentIndex) {
+                        form.validate().settings.ignore = ":disabled";
+                        return debug || form.valid();
+                    },
+                    onFinished: function(event, currentIndex) {
+                        alert("Submitted!");
+                        var data = $("#studentForm").serialize();
+                        var url = '../../Controllers/studentApplication.php';
+                        $.post(url, data, function(response) {
+                            console.log(response)
+                        }).fail(function(e) {
+                            alert("error" + e);
                         });
-                        //All on click events must go AFTER form.steps function
-                        $("#A_1").on("click", function() {
-                            console.log("Lole1");
-                            if ($(".voterReg :input").prop('disabled') && $("#A_1").is(":checked")) {
-                                    $(".voterReg :input").prop('disabled', false);
-                                    $(".voterReg").show("slow");
+                    }
+                }).validate({
+                    errorPlacement: function errorPlacement(error, element) {
+                        element.after(error);
+                    },
+                    highlight: function(element) {
+                        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                    },
+                    unhighlight: function(element) {
+                        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    },
+                    errorElement: 'span',
+                    errorClass: 'help-block',
+                    errorPlacement: function(error, element) {
+                        if (element.parent('.input-group').length) {
+                            if ((element).is(":checkbox")) {
+                                error.appendTo("#errorSpan");
+                            } else if (element.parent('.input-group').length) {
+                                error.insertAfter(element.parent());
                             } else {
-                                    $(".voterReg :input").prop('disabled', true);
-                                    $(".voterReg").hide("slow");
+                                error.insertAfter(element);
                             }
-                        }); 
-                        $("#A_2").on("click", function() {
-                            console.log("Lole2");
-                            if ($(".license :input").prop('disabled') && $("#A_2").is(":checked")) {
-                                $(".license :input").prop('disabled', false);
-                                $(".license").show("slow");
-                            } else {
-                                $(".license :input").prop('disabled', true);
-                                $(".license").hide("slow");
-                            }
-                        }); 
-                        $("#A_3").on("click", function() {
-                            console.log("Lole3");
-                            if ($(".stateID :input").prop('disabled') && $("#A_3").is(":checked")) {
-                                $(".stateID :input").prop('disabled', false);
-                                $(".stateID").show("slow");
-                            } else {
-                                $(".stateID :input").prop('disabled', true);
-                                $(".stateID").hide("slow");
-                            }
-                        }); 
-                        $("#A_4").on("click", function() {
-                            console.log("Lole4");
-                            if ($(".vehicleReg :input").prop('disabled') && $("#A_4").is(":checked")) {
-                                $(".vehicleReg :input").prop('disabled', false);
-                                $(".vehicleReg").show("slow");
-                            } else {
-                                $(".vehicleReg :input").prop('disabled', true);
-                                $(".vehicleReg").hide("slow");
-                            }
-                        }); 
-                        $("#A_7").on("click", function() {
-                            console.log("Lole7");
-                            if ($(".school :input").prop('disabled') && $("#A_7").is(":checked")) {
-                                $(".school :input").prop('disabled', false);
-                                $(".school").show("slow");
-                            } else {
-                                $(".school :input").prop('disabled', true);
-                                $(".school").hide("slow");
-                            }
-                        }); 
-                        $("#docUpload").fileinput({
-                                maxFileCount: 10,
-                                uploadUrl: "upload2.php"
-                        });
+                        }
+                    }
                 });
+                //All on click events must go AFTER form.steps function
+                $("#A_1").on("click", function() {
+                    console.log("Lole1");
+                    if ($(".voterReg :input").prop('disabled') && $("#A_1").is(":checked")) {
+                        $(".voterReg :input").prop('disabled', false);
+                        $(".voterReg").show("slow");
+                    } else {
+                        $(".voterReg :input").prop('disabled', true);
+                        $(".voterReg").hide("slow");
+                    }
+                });
+                $("#A_2").on("click", function() {
+                    console.log("Lole2");
+                    if ($(".license :input").prop('disabled') && $("#A_2").is(":checked")) {
+                        $(".license :input").prop('disabled', false);
+                        $(".license").show("slow");
+                    } else {
+                        $(".license :input").prop('disabled', true);
+                        $(".license").hide("slow");
+                    }
+                });
+                $("#A_3").on("click", function() {
+                    console.log("Lole3");
+                    if ($(".stateID :input").prop('disabled') && $("#A_3").is(":checked")) {
+                        $(".stateID :input").prop('disabled', false);
+                        $(".stateID").show("slow");
+                    } else {
+                        $(".stateID :input").prop('disabled', true);
+                        $(".stateID").hide("slow");
+                    }
+                });
+                $("#A_4").on("click", function() {
+                    console.log("Lole4");
+                    if ($(".vehicleReg :input").prop('disabled') && $("#A_4").is(":checked")) {
+                        $(".vehicleReg :input").prop('disabled', false);
+                        $(".vehicleReg").show("slow");
+                    } else {
+                        $(".vehicleReg :input").prop('disabled', true);
+                        $(".vehicleReg").hide("slow");
+                    }
+                });
+                $("#A_7").on("click", function() {
+                    console.log("Lole7");
+                    if ($(".school :input").prop('disabled') && $("#A_7").is(":checked")) {
+                        $(".school :input").prop('disabled', false);
+                        $(".school").show("slow");
+                    } else {
+                        $(".school :input").prop('disabled', true);
+                        $(".school").hide("slow");
+                    }
+                });
+                $("#docUpload").fileinput({
+                    maxFileCount: 10,
+                    uploadUrl: "upload2.php"
+                });
+            });
+
         </script>
     </body>
 

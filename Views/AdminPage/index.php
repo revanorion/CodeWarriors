@@ -2,7 +2,7 @@
 session_start();
  // Includes Login Script
 if(!isset($_SESSION['login_user'])){
-    header("location: ../Portal/index.php");
+    //header("location: ../Portal/index.php");
 }
 ?>
     <!DOCTYPE html>
@@ -26,19 +26,7 @@ if(!isset($_SESSION['login_user'])){
         <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">
-        <style type="text/css">
-            .has-error .form-control {
-                border-color: #a94442 !important;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important;
-            }
-
-            .has-success .form-control {
-                border-color: #3c763d !important;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important;
-            }
-
-        </style>
-
+        <link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     </head>
 
 
@@ -77,6 +65,7 @@ if(!isset($_SESSION['login_user'])){
                                 ?>
                                 </a>
                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="../../Controllers/logout.php">Logout</a> </li>
+
                     </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -84,82 +73,50 @@ if(!isset($_SESSION['login_user'])){
                 <!-- /.container-fluid -->
         </nav>
 
-        <!--BEGINNNING OF USER PAGE-->
+        <!--BEGINNNING OF PAGE-->
 
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
 
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad">
 
 
                     <div class="panel panel-info">
-
                         <div class="panel-heading">
-
-                            <h3 id="user_name" class="panel-title"><strong>Jon Snow</strong></h3>
-
-                            <span class="pull-right">
-                    <a href="user-profile-edit.html"  data-toggle="tooltip" type="button" class="btn btn-sm "><i class="glyphicon glyphicon-edit"></i></a>
-                </span>
-
+                            <h3 class="panel-title"><strong>Admin</strong></h3>
                         </div>
-
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-3 col-lg-3 " align="center"> <img src="../../Content/Images/male-profile-img.jpg" class="img-rectangle img-responsive"> </div>
-
-                                <div class=" col-md-9 col-lg-9 ">
-                                    <table class="table table-user-information">
-                                        <tbody>
-                                            <tr>
-                                                <td>Program:</td>
-                                                <td id="user-principle-field">Computer Science</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Date of Birth:</td>
-                                                <td id="user-dob">01/24/1988</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gender:</td>
-                                                <td>Male</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Campus Location:</td>
-                                                <td>Boca Raton, FL</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Admission date:</td>
-                                                <td id="user-admission-date">06/23/3000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Home Address:</td>
-                                                <td id="user-address">North Pole</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Email:</td>
-                                                <td><a href="mailto:JonSnow@fau.edu">JonSnow@fau.edu</a></td>
-                                            </tr>
-                                            <td>Phone Number:</td>
-                                            <td>111-111-1111 (Cell)
-                                                <br>000-000-0000 (Home)
-                                            </td>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                    <div class="col-md-6" style="float:right">
-                                        <a href="user-profile-edit.html" class="btn btn-primary">Edit Profile</a>
-                                        <a href="" class="btn btn-primary">Exit</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <table id="results-table" data-request-url="" data-table-onload-url="../../Controllers/adminData.php" data-modal-header="Edit AIA" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Student Name
+                                        </th>
+                                        <th>
+                                            Z Number </th>
+                                        <th>
+                                            Application Year </th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
+            <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript">
+                debugger;
+                var table = $('#results-table').DataTable({
+                    "sAjaxSource": "../../Controllers/adminData.php",
+                    "aoColumns": [{
+                        "mData": "STUDENT_NAME"
+                    }, {
+                        "mData": "Z_NUMBER"
+                    }, {
+                        "mData": "YEAR"
+                    }]
+                });
 
+            </script>
     </body>

@@ -52,6 +52,7 @@ function loginUser($email, $password){
         if(password_verify($password, $row["PASSWORD"])){
             //this will store the session vars
 //            $_SESSION["login_user_znum"] = $znumber;
+            $_SESSION["login_user_email"]=$email;
             $_SESSION["login_user"] = $row["USER_SEQ"];
             echo "your in".$_SESSION["login_user"];
         }
