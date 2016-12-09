@@ -97,6 +97,8 @@ if(!isset($_SESSION['login_user'])){
                                             Z Number </th>
                                         <th>
                                             Application Year </th>
+                                        <th>
+                                            Status </th>
                                     </tr>
                                 </thead>
                             </table>
@@ -115,6 +117,8 @@ if(!isset($_SESSION['login_user'])){
                         "mData": "Z_NUMBER"
                     }, {
                         "mData": "YEAR"
+                    }, {
+                        "mData": "STATUS"
                     }]
                 });
 
