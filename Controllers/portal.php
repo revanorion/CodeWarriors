@@ -25,7 +25,7 @@ function registerUser($email, $password){
     }
     else
     {
-        $insertStmt= "INSERT INTO USER (EMAIL_ADDRESS, PASSWORD) VALUES ('".$email."', '".password_hash($password, PASSWORD_DEFAULT)."')";
+        $insertStmt= "INSERT INTO USER (EMAIL_ADDRESS, PASSWORD, USER_ROLE_SEQ) VALUES ('".$email."', '".password_hash($password, PASSWORD_DEFAULT)."', 1)";
         $result = $db->query($insertStmt);
         if (mysqli_affected_rows($db) > -1) {
             $selectStmt = "SELECT MAX(USER_SEQ) AS USER_SEQ FROM USER";
@@ -44,13 +44,14 @@ function registerUser($email, $password){
 
 function loginUser($email, $password){
     require_once './db_connect.php';
-    $selectStmt = "SELECT USER_SEQ, PASSWORD FROM USER WHERE EMAIL_ADDRESS ='".$email."'";
+    $selectStmt = "SELECT USER_SEQ, PASSWORD, USER_ROLE_SEQ FROM USER WHERE EMAIL_ADDRESS ='".$email."'";
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password, $row["PASSWORD"])){
             //this will store the session vars
 //            $_SESSION["login_user_znum"] = $znumber;
+            $_SESSION["login_user_role"]=$row["USER_ROLE_SEQ"];
             $_SESSION["login_user_email"]=$email;
             $_SESSION["login_user"] = $row["USER_SEQ"];
             echo "your in".$_SESSION["login_user"];
