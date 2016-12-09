@@ -31,8 +31,8 @@
                     <li class="hidden">
                         <a href="#home"></a>
                     </li>
-                    <li class="page-scroll"> <a href="#">Home</a> </li>
-                    <li class="page-scroll"> <a href="#">Application</a> </li>
+                    <li class="page-scroll"> <a href="http://fauresidencyapp.byethost9.com">Home</a> </li>
+                    <li class="page-scroll"> <a href="http://fauresidencyapp.byethost9.com/StudentApplication/index.php">Application</a> </li>
                     <li class="page-scroll">
                         <button type="button" class="btn btn-lg btn-default dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
                         <div class="dropdown-menu">
