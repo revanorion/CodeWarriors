@@ -38,6 +38,10 @@ if(!isset($_SESSION['login_user'])){
                 -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important;
             }
             
+            .form-group {
+                margin-left: 10px;
+            }
+
             h1 {
                 color: red;
                 text-align: center;
@@ -50,14 +54,7 @@ if(!isset($_SESSION['login_user'])){
                 color: #fff !important;
                 cursor: default !important;
             }
-            
-            .checkbox input[type="checkbox"],
-            .checkbox-inline input[type="checkbox"] {
-                position: absolute;
-                margin-left: -15px;
-                margin-top: 4px \9;
-            }
-            
+
         </style>
 
     </head>
@@ -448,25 +445,23 @@ if(!isset($_SESSION['login_user'])){
                     <p>Note: If the student is a dependent, the parent is the claimant and will complete this section and provide evidence of residency supporting the claim. If the student is independent, the student is the claimant and will complete this section and provide evidence of residency supporting the claim. <em>No single document shall be conclusive in establishing residency.  Additional documentation, other than what is prescribed, may be requested in some cases.  All documentation provided is subject to verification.  Evidence of ties to another state may result in denial of Florida residency for tuition purposes.</em></p>
                     <div class="row">
                         <div class="row">
-                            <div class="form-group claimantName1 required col-md-6" data-cid="claimantName1">
+                            <div class="form-group claimantName1 required col-md-5" data-cid="claimantName1">
                                 <label class="control-label required-field" for="claimantName1">Claimant/Name of Person claiming FL Residency:</label>
                                 <input type="text" class="form-control" id="claimantName1" name="claimantName1" value="" data-rule-required="true" /> </div>
-                            <div class="form-group relationship required col-md-6" data-cid="relationship">
+                            <div class="form-group relationship required col-md-5" data-cid="relationship">
                                 <label class="control-label required-field" for="relationship">Claimant Relationship to Student:</label>
                                 <input type="text" class="form-control" id="relationship" name="relationship" value="" data-rule-required="true" /> </div>
                         </div>
+                        <div class="form-group claimantAddress required row" data-cid="claimantAddress">
+                            <label class="control-label required-field" for="claimantAddress">Claimant's Address</label>
+                            <input type="text" class="form-control" id="claimantAddress" name="claimantAddress" value="" placeholder="1234 Yellow Brick Rd." data-rule-required="true" /> </div>
                         <div class="row">
-                            <div class="form-group claimantAddress required col-md-12" data-cid="claimantAddress">
-                                <label class="control-label required-field" for="claimantAddress">Claimant's Address</label>
-                                <input type="text" class="form-control" id="claimantAddress" name="claimantAddress" value="" placeholder="1234 Yellow Brick Rd." data-rule-required="true" /> </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group phoneNum required col-md-6" data-cid="phoneNum">
+                            <div class="form-group phoneNum required col-md-5" data-cid="phoneNum">
                                 <label class="control-label required-field" for="phoneNum">Phone</label>
                                 <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-earphone"></i> </span>
                                     <input type="tel" class="form-control" id="phoneNum" name="phoneNum" value="" placeholder="xxx-xxx-xxxx" data-rule-pattern="[0-9]{3,4}[ -.]*[0-9]{3,4}[ -.]*[0-9]{4}" data-msg-pattern="Invalid phone number" data-rule-required="true" /> </div>
                             </div>
-                            <div class="form-group dateEstablished required col-md-6" data-cid="dateEstablished">
+                            <div class="form-group dateEstablished required col-md-5" data-cid="dateEstablished">
                                 <label class="control-label required-field" for="claimantAddress">Date Claimant began establishing legal Florida residence:</label>
                                 <div class="input-group date">
                                     <input type="text" class="form-control datepicker" id="dateEstablished" name="dateEstablished" value="" aria-describedby="dateEstablished-help-block" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
@@ -482,21 +477,21 @@ if(!isset($_SESSION['login_user'])){
 
                     <div class="row">
                         <div class="row">
-                            <div class="form-group studentName required col-md-6" data-cid="studentName">
+                            <div class="form-group studentName required col-md-5" data-cid="studentName">
                                 <label class="control-label required-field" for="studentName">Student Name</label>
                                 <input type="text" class="form-control" id="studentName" name="studentName" value="" data-rule-required="true" />
                             </div>
-                            <div class="form-group claimantName col-md-6" data-cid="claimantName">
+                            <div class="form-group claimantName col-md-5" data-cid="claimantName">
                                 <label class="control-label" for="claimantName">Claimant Name (if not the student)</label>
                                 <input type="text" class="form-control" id="claimantName" name="claimantName" value="" data-rule-required="" />
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group signature required col-md-6" data-cid="signature">
+                            <div class="form-group signature required col-md-5" data-cid="signature">
                                 <label class="control-label required-field" for="signature">Signature</label>
                                 <input type="text" class="form-control" id="signature" name="signature" value="" data-rule-required="true" />
                             </div>
-                            <div class="form-group dateSigned required col-md-6" data-cid="dateSigned">
+                            <div class="form-group dateSigned required col-md-5" data-cid="dateSigned">
                                 <label class="control-label required-field" for="dateSigned">Date</label>
                                 <div class="input-group date">
                                     <input type="text" class="form-control datepicker" id="dateSigned" name="dateSigned" value="" data-rule-required="true" /> <span class="input-group-addon right"><i class="glyphicon glyphicon-th"></i> </span></div>
@@ -521,7 +516,8 @@ if(!isset($_SESSION['login_user'])){
                         <br/> Florida Atlantic University </div>
                 </div>
             </div>
-        </footer> -->
+        </footer>
+-->
         <!--    necessary for jQuery steps-->
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
         <script src="jquery.steps.js"></script>
@@ -549,27 +545,36 @@ if(!isset($_SESSION['login_user'])){
                 $(".school :input").prop('disabled', true);
                 $(".school").hide();
 
+                //$(".voterReg :input").prop("disabled", true);
+                /*$("#A1").on("click", function(){
+                    $(".voterReg").hide();
+                    if($(".voterReg").prop('disabled')){
+                        $(".voterReg :input").prop('disabled', false);
+                        $(".voterReg").show();
+                    }
+                    else{
+                        $(".voterReg :input").prop('disabled', true);
+                        $(".voterReg").hide();
+                    }
+                });*/
+
+                /*$.validator.addMethod("valueNotEquals", function(value, element, arg) {
+                    return arg != value;
+                }, "Value must not equal arg.");*/
+                /*$(".voterReg").hide(1000);
+                $(".voterReg :input").prop("disabled", true);
+                $("#A_1").click(function(){
+                    $(".voterReg").toggle();
+                    $(".voterReg :input").prop('disabled', !$(".voterReg").prop('disabled'));
+                });*/
                 var form = $("#studentForm").show();
+
                 //Set to false during production
-                var debug = true;
+                var debug = false;
 
                 if (debug) {
                     $('#debug').html('<h1><b>DEBUG IS ON</b></h1>');
                 }
-                $.validator.addMethod('customemail', function(value, element) {
-                    console.log("IT WORKS");
-                    var allowedDomains = ['fau.edu'];
-                    var str = value;
-                    domain = str.split('@');
-
-                    if ($.inArray(domain[1], allowedDomains) !== -1) {
-                        //acceptable
-                        return true;
-                    } else {
-                        //not acceptable
-                        return false;
-                    }
-                });
                 form.steps({
                     headerTag: "h4",
                     bodyTag: "section",
@@ -621,11 +626,6 @@ if(!isset($_SESSION['login_user'])){
                         });
                     }
                 }).validate({
-                    rules: {
-                        email: {
-                            customemail: true
-                        }
-                    },
                     errorPlacement: function errorPlacement(error, element) {
                         element.after(error);
                     },
@@ -705,6 +705,7 @@ if(!isset($_SESSION['login_user'])){
                     uploadUrl: "upload2.php"
                 });
             });
+
         </script>
     </body>
 
