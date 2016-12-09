@@ -74,12 +74,10 @@ if(isset($_SESSION['login_user'])){
                     </br>
                     </br>
                     <div class="col-md-4"></div>
-                    <div class="row">
-                        <div class="form-group email required col-md-4" data-cid="c2">
-                            <label class="control-label required-field" for="email">Email</label>
-                            <div class="input-group"><span class="input-group-addon left"><i class="glyphicon glyphicon-envelope"></i> </span>
-                                <input type="email" class="form-control" id="email" name="email" value="" data-rule-email="true" data-rule-required="true" placeholder="Jsnow2016@fau.edu" /> </div>
-                        </div>
+                    <div class="form-group col-md-4">
+                        <label for="email">Email:</label>
+                        <div class="input-group"> <span class="input-group-addon" id="basic-addon1">E</span>
+                            <input class="form-control" name="email" id="email" type="email" placeholder="Enter Email" aria-describedby="basic-addon1"> </div>
                     </div>
                 </div>
                 <div class="row">
