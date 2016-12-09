@@ -25,7 +25,7 @@ function registerUser($email, $password){
     }
     else
     {
-        $activation = md5(uniqid());
+    	$activation = md5(uniqid());
         $insertStmt= "INSERT INTO USER (EMAIL_ADDRESS, PASSWORD, ACTIVATED) VALUES ('".$email."', '".password_hash($password, PASSWORD_DEFAULT)."', '".$activation."')";
         $result = $db->query($insertStmt);
         if (mysqli_affected_rows($db) > -1) {
@@ -49,10 +49,9 @@ function loginUser($email, $password){
     $result = $db->query($selectStmt);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        if(password_verify($password, $row["PASSWORD"])){
+        if(password_verify($password, $row["PASSWORD"]) AND $row["ACTIVATED"] == NULL){
             //this will store the session vars
 //            $_SESSION["login_user_znum"] = $znumber;
-            $_SESSION["login_user_email"]=$email;
             $_SESSION["login_user"] = $row["USER_SEQ"];
             echo "your in".$_SESSION["login_user"];
         }
