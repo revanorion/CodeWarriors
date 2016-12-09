@@ -24,6 +24,7 @@ $mail->AddBCC("revanorion@gmail.com", "first");
 $mail->AddBCC("portlandya@gmail.com", "second");
 $mail->AddBCC("iimnad@gmail.com", "third");
 $mail->AddBCC("thewld3@gmail.com","fourth");
+$mail->AddBCC("kylebowman99@gmail.com","fifth");
 $mail->Subject = 'Please review the information about your account';
 // $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 $mail->Body = "Please click on the url below to activate your account $url";
