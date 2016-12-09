@@ -82,11 +82,19 @@ if(!isset($_SESSION['login_user'])){
                             <a href="#home"></a>
                         </li>
                         <li class="page-scroll"> <a href="http://fauresidencyapp.byethost9.com">Home</a> </li>
-                        <li class="page-scroll"> <a href="http://fauresidencyapp.byethost9.com/StudentApplication/Index.php">Application</a> </li>
+                        <li class="page-scroll"> <a href="http://fauresidencyapp.byethost9.com/Views/StudentApplication/Index.php">Application</a> </li>
+                        <?php
+                        if($_SESSION['login_user_role'] == 2)
+                        {
+                            echo "<li class=""page-scroll""> <a href=""http://fauresidencyapp.byethost9.com/Views/AdminPage"">Admin Page</a> </li>";
+                        }
+                        ?>
+
+
                         <li class="page-scroll">
                             <button type="button" class="btn btn-lg btn-default dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item">
+                                <a class="dropdown-item" href="http://fauresidencyapp.byethost9.com/Views/UserPage">
                                     <?php
                                 echo $_SESSION["login_user_email"];
                                 ?>
