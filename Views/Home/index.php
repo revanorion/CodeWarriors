@@ -54,7 +54,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4 col-md-4-offset">
                 <a href="../StudentApplication/Index.php">
-                    <button id="id="studentNewBtn"" type="button" class="btn btn-md btn-success center-block">Start an Application</button>
+                    <button id="studentNewBtn type="button" class="btn btn-md btn-success center-block">Start an Application</button>
                 </a>
             </div>
         </div>
