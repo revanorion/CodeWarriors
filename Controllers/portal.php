@@ -25,7 +25,8 @@ function registerUser($email, $password){
     }
     else
     {
-        $insertStmt= "INSERT INTO USER (EMAIL_ADDRESS, PASSWORD) VALUES ('".$email."', '".password_hash($password, PASSWORD_DEFAULT)."')";
+        $activation = md5(uniqid());
+        $insertStmt= "INSERT INTO USER (EMAIL_ADDRESS, PASSWORD, ACTIVATED) VALUES ('".$email."', '".password_hash($password, PASSWORD_DEFAULT)."', '".$activation."')";
         $result = $db->query($insertStmt);
         if (mysqli_affected_rows($db) > -1) {
             $selectStmt = "SELECT MAX(USER_SEQ) AS USER_SEQ FROM USER";

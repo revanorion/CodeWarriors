@@ -1,7 +1,6 @@
 <?php
 session_start();
  // Includes Login Script
-$_SESSION['login_user'] = '123';
 if(isset($_SESSION['login_user'])){
     header("location: ../StudentApplication/Index.php");
 }
