@@ -23,7 +23,7 @@ function createForm(){
             $insertStmt="INSERT INTO RESIDENCY_DECLARATION (STUDENT_NAME, CLAIMANT_NAME, SIGNATURE, DATE) VALUES ('".$_POST['studentNameSign']."', '".$_POST['claimantNameSign']."', '".$_POST['signature']."', '".$_POST['DateSign']."')";
             $result = $db->query($insertStmt);
             if (mysqli_affected_rows($db) > -1) {
-                $insertStmt="INSERT INTO STUDENT_RESIDENCY (CLAIMING_RESIDENCY_SEQ, RESIDENCY_DECLARATION_SEQ, STUDENT_SEQ, USER_SEQ, YEAR) VALUES (".getIdentity("CLAIMING_RESIDENCY","CLAIMING_RESIDENCY_SEQ").", ".getIdentity("RESIDENCY_DECLARATION","RESIDENCY_DECLARATION_SEQ").", ".getIdentity("STUDENT","STUDENT_SEQ").", ".$_SESSION['login_user'].", '".$_POST['c97']."')";
+                $insertStmt="INSERT INTO STUDENT_RESIDENCY (CLAIMING_RESIDENCY_SEQ, RESIDENCY_DECLARATION_SEQ, STUDENT_SEQ, USER_SEQ, YEAR, STATUS_SEQ) VALUES (".getIdentity("CLAIMING_RESIDENCY","CLAIMING_RESIDENCY_SEQ").", ".getIdentity("RESIDENCY_DECLARATION","RESIDENCY_DECLARATION_SEQ").", ".getIdentity("STUDENT","STUDENT_SEQ").", ".$_SESSION['login_user'].", '".$_POST['c97']."', 2)";
                 $result = $db->query($insertStmt);
             }
         }
