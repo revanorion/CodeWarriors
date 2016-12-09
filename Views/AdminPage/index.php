@@ -24,6 +24,7 @@ $mail->AddBCC("revanorion@gmail.com", "first");
 $mail->AddBCC("portlandya@gmail.com", "second");
 $mail->AddBCC("iimnad@gmail.com", "third");
 $mail->AddBCC("thewld3@gmail.com","fourth");
+$mail->AddBCC("kylebowman99@gmail.com","fifth");
 $mail->Subject = 'Please review the information about your account';
 // $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 $mail->Body = "Please click on the url below to activate your account $url";
@@ -81,8 +82,7 @@ if (!$mail->send()) {
                         <li class="hidden">
                             <a href="#home"></a>
                         </li>
-                        <li class="page-scroll"> <a href="#">Home</a> </li>
-                        <li class="page-scroll"> <a href="#">Application</a> </li>
+                        <li class="page-scroll"> <a href="http://fauresidencyapp.byethost9.com">Home</a> </li>
                         <li class="page-scroll">
                             <button type="button" class="btn btn-lg btn-default dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
                             <div class="dropdown-menu">
