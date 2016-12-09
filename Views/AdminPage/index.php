@@ -1,8 +1,9 @@
 <?php
 session_start();
  // Includes Login Script
-if(!isset($_SESSION['login_user'])){
-    //header("location: ../Portal/index.php");
+echo $_SESSION['login_user_role'];
+if(!isset($_SESSION['login_user']) && $_SESSION['login_user_role'] == '2') {
+    header("location: ../Portal/index.php");
 }
 ?>
     <!DOCTYPE html>
