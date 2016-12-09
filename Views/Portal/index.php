@@ -44,12 +44,20 @@ if(isset($_SESSION['login_user'])){
                         </li>
                         <li class="page-scroll"> <a href="#">Home</a> </li>
                         <li class="page-scroll"> <a href="#">Application</a> </li>
-                        <li class="page-scroll"> <a href="#">Login</a> </li>
+                        <li class="page-scroll">
+                            <button type="button" class="btn btn-lg btn-default dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">
+                                    <?php
+                                echo $_SESSION["login_user_email"];
+                                ?>
+                                </a>
+                                <div class="dropdown-divider"></div> <a class="dropdown-item" href="../../Controllers/logout.php">Logout</a> </li>
                     </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
         </nav>
         <!-- END Leave this in every Page -->
         <div class="container-fluid body-content">

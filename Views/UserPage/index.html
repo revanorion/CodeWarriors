@@ -45,7 +45,7 @@ if(!isset($_SESSION['login_user'])){
 
     <body>
 
-     <!-- BEGINNING Leave this in every page -->
+        <!-- BEGINNING Leave this in every page -->
         <header class="banner">
             <div class="container">
                 <div class="row">
@@ -68,92 +68,98 @@ if(!isset($_SESSION['login_user'])){
                         </li>
                         <li class="page-scroll"> <a href="#">Home</a> </li>
                         <li class="page-scroll"> <a href="#">Application</a> </li>
-                        <li class="page-scroll"> <a href="#">Login</a> </li>
+                        <li class="page-scroll">
+                            <button type="button" class="btn btn-lg btn-default dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">
+                                    <?php
+                                echo $_SESSION["login_user_email"];
+                                ?>
+                                </a>
+                                <div class="dropdown-divider"></div> <a class="dropdown-item" href="../../Controllers/logout.php">Logout</a> </li>
                     </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
         </nav>
 
-    <!--BEGINNNING OF USER PAGE-->
+        <!--BEGINNNING OF USER PAGE-->
 
 
-    <div class="container">
-      <div class="row">
+        <div class="container">
+            <div class="row">
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
 
 
-          <div class="panel panel-info">
+                    <div class="panel panel-info">
 
-            <div class="panel-heading">
+                        <div class="panel-heading">
 
-                <h3 id="user_name" class="panel-title" ><strong>Jon Snow</strong></h3>
+                            <h3 id="user_name" class="panel-title"><strong>Jon Snow</strong></h3>
 
-                <span class="pull-right">
+                            <span class="pull-right">
                     <a href="user-profile-edit.html"  data-toggle="tooltip" type="button" class="btn btn-sm "><i class="glyphicon glyphicon-edit"></i></a>
                 </span>
 
-            </div>
+                        </div>
 
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img src="../../Content/Images/male-profile-img.jpg" class="img-rectangle img-responsive"> </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 " align="center"> <img src="../../Content/Images/male-profile-img.jpg" class="img-rectangle img-responsive"> </div>
 
-                <div class=" col-md-9 col-lg-9 ">
-                  <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <td>Program:</td>
-                        <td id="user-principle-field">Computer Science</td>
-                      </tr>
-                        <tr>
-                        <td>Date of Birth:</td>
-                        <td id="user-dob">01/24/1988</td>
-                      </tr>
-                        <tr>
-                        <td>Gender:</td>
-                        <td>Male</td>
-                      </tr>
-                    <tr>
-                        <td>Campus Location:</td>
-                        <td>Boca Raton, FL</td>
-                      </tr>
-                      <tr>
-                        <td>Admission date:</td>
-                        <td id="user-admission-date">06/23/3000</td>
-                      </tr>
-                        <tr>
-                        <td>Home Address:</td>
-                        <td id="user-address">North Pole</td>
-                      </tr>
-                      <tr>
-                        <td>Email:</td>
-                        <td><a href="mailto:JonSnow@fau.edu">JonSnow@fau.edu</a></td>
-                        </tr>
-                        <td>Phone Number:</td>
-                        <td>111-111-1111 (Cell)<br>000-000-0000 (Home)
-                        </td>
+                                <div class=" col-md-9 col-lg-9 ">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                            <tr>
+                                                <td>Program:</td>
+                                                <td id="user-principle-field">Computer Science</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date of Birth:</td>
+                                                <td id="user-dob">01/24/1988</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gender:</td>
+                                                <td>Male</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Campus Location:</td>
+                                                <td>Boca Raton, FL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Admission date:</td>
+                                                <td id="user-admission-date">06/23/3000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Home Address:</td>
+                                                <td id="user-address">North Pole</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email:</td>
+                                                <td><a href="mailto:JonSnow@fau.edu">JonSnow@fau.edu</a></td>
+                                            </tr>
+                                            <td>Phone Number:</td>
+                                            <td>111-111-1111 (Cell)
+                                                <br>000-000-0000 (Home)
+                                            </td>
 
-                      </tr>
+                                            </tr>
 
-                        </tbody>
-                    </table>
-                    <div class="col-md-6" style="float:right">
-                        <a href="user-profile-edit.html" class="btn btn-primary">Edit Profile</a>
-                        <a href="" class="btn btn-primary">Exit</a>
+                                        </tbody>
+                                    </table>
+                                    <div class="col-md-6" style="float:right">
+                                        <a href="user-profile-edit.html" class="btn btn-primary">Edit Profile</a>
+                                        <a href="" class="btn btn-primary">Exit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-              </div>
             </div>
-
-          </div>
         </div>
-      </div>
-</div>
 
-</body>
-
-
-
+    </body>
