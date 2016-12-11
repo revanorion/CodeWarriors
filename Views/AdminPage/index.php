@@ -4,38 +4,19 @@ session_start();
 if(!isset($_SESSION['login_user']) || $_SESSION['login_user_role'] != 2) {
     header("location: ../Portal/index.php");
 }
-if (isset($_POST['sendmail'])){
-$url = "www.fauresidencyapp.byethost9.com";
-date_default_timezone_set('Etc/UTC');
-require 'PHPMailer/PHPMailerAutoload.php';
-$mail = new PHPMailer;
-$mail->isSMTP();
-// $mail->SMTPDebug = 2;
-$mail->Debugoutput = 'html';
-$mail->Host = 'smtp.gmail.com';
-$mail->Port = 587;
-$mail->SMTPSecure = 'tls';
-$mail->SMTPAuth = true;
-$mail->Username = "fauresidency@gmail.com";
-$mail->Password = "FAUresidency1234";
-$mail->setFrom('confirmation@fauresidency.com', 'FAU Residency');
-$mail->addAddress("imnadrii@gmail.com", '');
-$mail->AddBCC("revanorion@gmail.com", "first");
-$mail->AddBCC("portlandya@gmail.com", "second");
-$mail->AddBCC("iimnad@gmail.com", "third");
-$mail->AddBCC("thewld3@gmail.com","fourth");
-$mail->AddBCC("kylebowman99@gmail.com","fifth");
-$mail->Subject = 'Please review the information about your account';
-// $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-$mail->Body = "Please click on the url below to activate your account $url";
-// $mail->addAttachment('images/phpmailer_mini.png');
-
-
-if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-    echo "Message sent!";
-}}
+if (isset($_POST["sendmail"])){
+include('massmail.php');
+$email = $_POST["email"];
+$message = $_POST["message"];
+$title = $_POST["title"];
+$result = massmail($email, $message, $title);
+if ($result == 1){
+echo "Message Sent";
+}
+else{
+echo "try again in a minute";
+}
+}
 ?>
     <!DOCTYPE html>
 
@@ -125,9 +106,14 @@ if (!$mail->send()) {
                     <form method="post">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
-                            <button type="submit" name="sendmail" class="btn btn-primary btn-block btn-large">Send Mass Mail</button>
+                            <input class="form-control" name="email" id="emails" type="text" placeholder="Enter email addresses with space" required>
+                            <input class="form-control" name="title" id="title" type="text" placeholder="Enter Subject " required>
+                            <h4><center> Write the message you want to be sent to all users below</center></h4>
+                            <label for="message">Message:</label>
+                            <textarea class="form-control" rows="5" id="message" name="message" required></textarea>
+                            <button type="submit" name="sendmail" class="btn btn-primary btn-block btn-large">Send Mail</button>
+                        </div>
                     </form>
-                    </div>
                 </div>
             </div>
             <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
@@ -144,6 +130,12 @@ if (!$mail->send()) {
                     }, {
                         "mData": "STATUS"
                     }]
+                });
+            </script>
+            <script>
+                $('#emails').focus().keyup(function () {
+                    var str = this.value.replace(/(\w)[\s,]+(\w?)/g, '$1, $2');
+                    if (str != this.value) this.value = str;
                 });
             </script>
     </body>
