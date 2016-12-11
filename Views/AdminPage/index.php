@@ -5,7 +5,7 @@ if(!isset($_SESSION['login_user']) || $_SESSION['login_user_role'] != 2) {
     header("location: ../Portal/index.php");
 }
 if (isset($_POST["sendmail"])){
-include('massmail.php');
+include('mailinglist.php');
 $email = $_POST["email"];
 $message = $_POST["message"];
 $title = $_POST["title"];
